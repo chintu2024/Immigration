@@ -1,0 +1,11 @@
+# robots.txt 
+# www.domain.com
+# Format is:
+#       User-agent: <name of spider>
+#       Disallow: <nothing> | <path>
+#test
+
+User-agent: *
+Disallow: /banner/
+User-agent: Mediapartners-Google
+Allow: /
