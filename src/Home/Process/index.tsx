@@ -12,7 +12,7 @@ const ProcessIndex = (props: Props) => {
     <ProcessStyle>
       <div className="container">
         <div className="row">
-          <div className="col-md-9 offset-md-3 mx-auto">
+          <div className="col-md-10 offset-md-2 mx-auto">
             <Typography
               as="p"
               _color="#28003B"
@@ -24,7 +24,7 @@ const ProcessIndex = (props: Props) => {
               We make your journey stress free by using our experience and
               extensive knowledge.
               <Images
-                src={"images/logotick.png"}
+                src={"images/logotick2.svg"}
                 alt={"logo tick"}
                 width={114}
                 height={18}
@@ -81,7 +81,9 @@ const ProcessIndex = (props: Props) => {
                 </div>
               ))}
             </div>
-            <FormIndex/>
+          </div>
+          <div className="col-md-12">
+            <FormIndex />
           </div>
         </div>
       </div>

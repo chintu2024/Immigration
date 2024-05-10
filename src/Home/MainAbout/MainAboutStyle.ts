@@ -2,16 +2,16 @@ import styled from "styled-components";
 import theme from "styles/themeColor";
 
 const MainAboutStyle = styled.section`
-   .scrollmagic-pin-spacer{
+  .scrollmagic-pin-spacer {
     margin-bottom: 40px !important;
-    .aboutFirst{
+    .aboutFirst {
       border-radius: 22px;
-    position: relative;
-    padding: 80px 60px;
-    overflow: hidden;
-    z-index: 1;
-    margin: 40px 0px;
-    transition: all 1s ease-in-out;
+      position: relative;
+      padding: 80px 60px;
+      overflow: hidden;
+      z-index: 1;
+      margin: 40px 0px;
+      transition: all 1s ease-in-out;
     }
     .color1 {
       background-color: #ff7c54;
@@ -19,29 +19,29 @@ const MainAboutStyle = styled.section`
     .color2 {
       background-color: #2babe2;
     }
-    .color3{
+    .color3 {
       background-color: #65c3a2;
     }
-    .color4{
+    .color4 {
       background-color: #fee300;
     }
-    .color5{
+    .color5 {
       background-color: #304656;
     }
-    :nth-child(1) .scroll2 .aboutFirst{
+    :nth-child(1) .scroll2 .aboutFirst {
       margin: 0px 30px !important;
       transition: all 1s ease-in-out;
     }
-    :nth-child(2) .scroll2 .aboutFirst{
+    :nth-child(2) .scroll2 .aboutFirst {
       margin: 10px 25px !important;
     }
-    :nth-child(3) .scroll2 .aboutFirst{
+    :nth-child(3) .scroll2 .aboutFirst {
       margin: 20px 15px !important;
     }
-    :nth-child(4) .scroll2 .aboutFirst{
+    :nth-child(4) .scroll2 .aboutFirst {
       margin: 30px 10px !important;
     }
-    :nth-child(5) .scroll2 .aboutFirst{
+    :nth-child(5) .scroll2 .aboutFirst {
       margin: 40px 0px !important;
     }
     .InfoSection_shadow {
@@ -80,13 +80,13 @@ const MainAboutStyle = styled.section`
           height: 14px;
           top: 6px;
           left: 0px;
-           background-size: 16px;
+          background-size: 16px;
         }
         a {
           color: ${theme.colors.white};
           font-size: 18px;
           letter-spacing: 1px;
-          :hover{
+          :hover {
             opacity: 0.8;
           }
         }
@@ -97,17 +97,17 @@ const MainAboutStyle = styled.section`
     width: 199px;
     display: flex;
     margin-top: 30px;
-    a{
-        color: #FFFFFF;
-        border: 1px solid #FFFFFF;
-        display: block;
-        border-radius: 25px;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0px;
-        :hover{
-            opacity: 0.8;
-        }
+    a {
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      display: block;
+      border-radius: 25px;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0px;
+      :hover {
+        opacity: 0.8;
+      }
     }
   }
 `;

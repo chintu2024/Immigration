@@ -19,12 +19,23 @@ interface InputProps {
 }
 
 const TextInput = (props: InputProps) => {
-  const { name, type, value, onChange, error, label, variant, disabled, leftIcon, rightIcon, maxlength, onBlur, height } = props;
+  const {
+    name,
+    type,
+    value,
+    onChange,
+    error,
+    label,
+    variant,
+    disabled,
+    leftIcon,
+    rightIcon,
+    maxlength,
+    onBlur,
+    height,
+  } = props;
   return (
-    <InpWrapper
-      className={`${value ? "open " : ""} ${error ? "error " : ""}${disabled ? "disabled " : ""}${leftIcon ? "lefticon " : ""}${rightIcon ? "righticon" : ""} inputwrapper`}
-      height={height ? height : ""}
-    >
+    <InpWrapper>
       {leftIcon ? <span className="inpIconlft">{leftIcon}</span> : ""}
       <input
         name={name}
@@ -61,12 +72,22 @@ interface TextProps {
 }
 
 const TextArea = (props: TextProps) => {
-  const { value, onchange, error, label, variant, disabled, leftIcon, rightIcon, maxlength, name, height, onblur } = props;
+  const {
+    value,
+    onchange,
+    error,
+    label,
+    variant,
+    disabled,
+    leftIcon,
+    rightIcon,
+    maxlength,
+    name,
+    height,
+    onblur,
+  } = props;
   return (
-    <InpWrapper
-      className={`textarea ${error ? "error " : ""}${disabled ? "disabled " : ""}${leftIcon ? "lefticon " : ""}${rightIcon ? "righticon" : ""}`}
-      height={height}
-    >
+    <InpWrapper>
       {leftIcon ? <span className="inpIconlft">{leftIcon}</span> : ""}
       <textarea
         value={value}

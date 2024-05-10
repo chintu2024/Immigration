@@ -7,24 +7,21 @@ import CheckEligibilityIndex from "./CheckEligibility";
 import ProcessIndex from "./Process";
 import LatestUpdateIndex from "./LatestUpdate";
 import Inspiration from "./Inspiration";
-interface Props {};
+interface Props {}
 
 const Home = (props: Props) => {
   return (
     <StyleHome>
-      <Banner/>
-      <ImmigrationIndex/>
-      <MainAbout/>
-      <CheckEligibilityIndex/>
-      <ProcessIndex/>
-      <LatestUpdateIndex/>
-      <Inspiration/>
+      <Banner />
+      <ImmigrationIndex />
+      <MainAbout />
+      <CheckEligibilityIndex />
+      <ProcessIndex />
+      <LatestUpdateIndex />
+      <Inspiration />
     </StyleHome>
   );
 };
 export default Home;
 
-export const StyleHome = styled.section`
-
-`;
-
+export const StyleHome = styled.section``;

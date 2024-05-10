@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 html,
 body {
   margin: 0;
@@ -14,7 +14,6 @@ body {
    -webkit-font-smoothing: antialiased;
    -moz-font-smoothing: antialiased;
    -o-font-smoothing: antialiased;
-   background: #FFFDF8 !important;
 }
 a{
   text-decoration: none;
@@ -189,7 +188,7 @@ button {
   .container-xl,
   .container-xxl,
   .ti-container {
-    max-width: 1320px;
+    max-width: 1200px;
   }
 }
 .myDangerousHTML{
@@ -4329,7 +4328,7 @@ input.tradeBtn {
 ::-webkit-scrollbar {
   background-color: #fff;
   width: 12px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 ::-webkit-scrollbar-track {

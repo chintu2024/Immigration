@@ -3,14 +3,14 @@ import theme from "styles/themeColor";
 
 const FromStyle = styled.div`
   background-color: ${theme.colors.manu};
-  padding: 30px 40px;
+  padding: 30px 0px;
   border-radius: 0px 0px 62px 62px;
   margin-top: 40px;
   .peopleHead {
     background-color: #343436;
     display: flex;
     border-radius: 0px 0px 32px 32px;
-    margin-top: 50px;
+    margin-top: 100px;
     .peopleTel {
       display: flex;
       color: #fff;
@@ -19,6 +19,12 @@ const FromStyle = styled.div`
         margin-right: 10px;
       }
     }
+  }
+  .subtitle {
+    margin-top: -10px;
+  }
+  .formText {
+    padding-right: 80px;
   }
   .peopleDetails {
     padding: 15px;
@@ -30,7 +36,7 @@ const FromStyle = styled.div`
     padding: 0 16px;
     display: block;
     width: 100%;
-    height: 40px;
+    height: 56px;
     background-color: transparent;
     -webkit-transition: 0.2s ease all;
     transition: 0.2s ease all;

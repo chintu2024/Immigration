@@ -5,7 +5,7 @@ const MyApp = ({ Component, ...rest }: AppProps) => {
   return (
     <>
       <GlobalStyle />
-        <Component />
+      <Component />
     </>
   );
 };

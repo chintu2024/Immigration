@@ -10,7 +10,7 @@ const FormIndex = (props: Props) => {
   return (
     <FromStyle>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-5 offset-md-1">
           <div className="formText">
             <Images
               src={"images/bannerColor.svg"}
@@ -34,7 +34,7 @@ const FormIndex = (props: Props) => {
               _fontSize={["20px", "36px"]}
               _fontWeight={[600, 600]}
               _lineHeight={["30px", "45px"]}
-              className=""
+              className="subtitle"
             >
               expert consultation
             </Typography>
@@ -94,7 +94,7 @@ const FormIndex = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-5">
           <div className="formInput">
             <div className="row">
               <div className="col-md-12">
@@ -121,7 +121,7 @@ const FormIndex = (props: Props) => {
                 />
               </div>
               <div className="col-md-6">
-              <Typography
+                <Typography
                   as="p"
                   _color="#fff"
                   _fontSize={["14px", "16px"]}
@@ -138,10 +138,10 @@ const FormIndex = (props: Props) => {
                   label="Mobile"
                   height="40px"
                   variant="label"
-                 />
+                />
               </div>
               <div className="col-md-6">
-              <Typography
+                <Typography
                   as="p"
                   _color="#fff"
                   _fontSize={["14px", "16px"]}
@@ -158,10 +158,10 @@ const FormIndex = (props: Props) => {
                   label="Email"
                   variant="label"
                   height="40px"
-                 />
+                />
               </div>
               <div className="col-md-12">
-              <Typography
+                <Typography
                   as="p"
                   _color="#fff"
                   _fontSize={["14px", "16px"]}
@@ -172,17 +172,15 @@ const FormIndex = (props: Props) => {
                   Select Program
                 </Typography>
                 <select name="cars" id="cars" className="form-control">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+                </select>
               </div>
             </div>
           </div>
-          <div className="box-col-md-12">
-            
-          </div>
+          <div className="box-col-md-12"></div>
         </div>
       </div>
     </FromStyle>

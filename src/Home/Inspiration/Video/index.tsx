@@ -10,8 +10,18 @@ const VideoIndex = (props: Props) => {
     <VideoStyle>
       <div className="videoSec">
         <div className="videoImagee">
-        <Images src={"images/video.png"} alt={"video"} width={"100%"}></Images>
-        <Images src={"images/videoarrow.png"} alt={"videoArrow"} width={48} height={48} className="videoarrow"></Images>
+          <Images
+            src={"images/video.png"}
+            alt={"video"}
+            width={"100%"}
+          ></Images>
+          <Images
+            src={"images/videoarrow.png"}
+            alt={"videoArrow"}
+            width={48}
+            height={48}
+            className="videoarrow"
+          ></Images>
         </div>
         <Typography
           as="p"
@@ -19,7 +29,7 @@ const VideoIndex = (props: Props) => {
           _fontSize={["14px", "22px"]}
           _fontWeight={[700, 700]}
           _lineHeight={["20px", "35px"]}
-          className="mt-3"
+          className="mt-2"
         >
           Anisha Naidu
         </Typography>
@@ -28,9 +38,10 @@ const VideoIndex = (props: Props) => {
           _color="#000"
           _fontSize={["14px", "16px"]}
           _fontWeight={[400, 400]}
-          _lineHeight={["20px", "35px"]}
-          className="mt-1"
-        >Canada PR Visa
+          _lineHeight={["20px", "13px"]}
+          className="mt-0"
+        >
+          Canada PR Visa
         </Typography>
       </div>
     </VideoStyle>

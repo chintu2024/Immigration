@@ -17,12 +17,14 @@ const BigNews = (props: Props) => {
         <Typography
           as="span"
           _color="#fff"
-          _fontSize={["14px", "16px"]}
+          _fontSize={["14px", "14px"]}
           _fontWeight={[400, 400]}
           _lineHeight={["14px", "24px"]}
-          className="my-3 text-uppercase newsTag"
-        >EXPRESS ENTRY
+          className="mt-3 mb-1 text-uppercase newsTag"
+        >
+          EXPRESS ENTRY
         </Typography>
+
         <Typography
           as="h4"
           _color="#000"
@@ -30,8 +32,9 @@ const BigNews = (props: Props) => {
           _fontWeight={[400, 400]}
           _lineHeight={["30px", "34px"]}
           className="mb-1"
-        >Canada Welcomed Over 1 Million International 
-        Students in 2023: A Comprehensive Analysis
+        >
+          Canada Welcomed Over 1 Million International Students in 2023: A
+          Comprehensive Analysis
         </Typography>
         <Typography
           as="h4"
@@ -40,7 +43,8 @@ const BigNews = (props: Props) => {
           _fontWeight={[400, 400]}
           _lineHeight={["30px", "34px"]}
           className=" text-uppercase"
-        >FEBRUARY 2, 2024
+        >
+          FEBRUARY 2, 2024
         </Typography>
       </div>
     </BigNewsStyle>

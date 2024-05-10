@@ -6,7 +6,6 @@ interface Props {}
 
 const index = (props: Props) => {
   return (
-    
     // <>
     // <ImButton as="button" variant="primaryOutline" fontWeight="500" btnWidth="200px" themeColor={theme} size="medium">Contact</ImButton>
     // <Typography
@@ -17,15 +16,13 @@ const index = (props: Props) => {
     //    _lineHeight={["76px", "76px"]}
     //     className=""
     //  >
-    //    TEST  
+    //    TEST
     //  </Typography>
     // </>
     <LayOut>
-    <Home/>
+      <Home />
     </LayOut>
   );
 };
 
 export default index;
-
-

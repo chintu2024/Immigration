@@ -4,9 +4,9 @@ import Images from "src/Common/Images";
 import Typography from "src/Common/Typography";
 
 interface Props {
-    images?:any;
-    title?: any;
-    description?:any;
+  images?: any;
+  title?: any;
+  description?: any;
 }
 
 const CardIndex = (props: Props) => {
@@ -40,7 +40,16 @@ const CardIndex = (props: Props) => {
           {props.description}
         </Typography>
         <div className="checkBtn">
-            <a href="javascript:void(0)"> Check Score <img src="images/card-arrow.svg" alt="arrow" width="14" height="10" /> </a>
+          <a href="javascript:void(0)">
+            {" "}
+            Check Score{" "}
+            <img
+              src="images/card-arrow.svg"
+              alt="arrow"
+              width="14"
+              height="10"
+            />{" "}
+          </a>
         </div>
       </div>
     </CardStyle>

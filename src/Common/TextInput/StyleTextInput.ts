@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-const InpWrapper = styled.div<{ height: any }>`
+const InpWrapper = styled.div`
   position: relative;
   border: 1px solid #d2dae0;
   border-radius: 8px;
 
-  height: ${(props) => (props.height ? props.height : "56px")};
   /* margin-bottom: 10p x; */
 
   background: #fff;
@@ -20,7 +19,7 @@ const InpWrapper = styled.div<{ height: any }>`
     padding: 0 16px;
     display: block;
     width: 100%;
-    height: ${(props) => (props.height ? props.height : "54px")};
+    height: 56px;
     background-color: transparent;
     transition: 0.2s ease all;
     box-sizing: border-box;
@@ -58,7 +57,7 @@ const InpWrapper = styled.div<{ height: any }>`
     position: absolute;
     pointer-events: none;
     left: 16px;
-    top: 18px;
+    top: 28px;
     height: 20px;
     line-height: 3px;
     transition: 0.2s ease all;

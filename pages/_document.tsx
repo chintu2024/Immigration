@@ -8,11 +8,14 @@ const MyDocument = (props: Props) => {
     <Html lang="en">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
-        <Main/>
+        <Main />
         <NextScript />
       </body>
     </Html>
@@ -25,7 +28,8 @@ MyDocument.getInitialProps = async (ctx: any) => {
   try {
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App: any) => (props: any) => sheet.collectStyles(<App {...props} />),
+        enhanceApp: (App: any) => (props: any) =>
+          sheet.collectStyles(<App {...props} />),
       });
 
     const initialProps = await Document.getInitialProps(ctx);

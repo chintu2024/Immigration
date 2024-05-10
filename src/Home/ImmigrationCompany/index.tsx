@@ -11,7 +11,7 @@ function ImmigrationIndex({}: Props) {
     <ImmigrationStyle>
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-6 imagesSection">
             <div className="ImmigrationDiv">
               <Images src={"images/immigrationMan.png"} alt={"images"}></Images>
               <div className="satisfied">
@@ -58,7 +58,9 @@ function ImmigrationIndex({}: Props) {
               _lineHeight={["30px", "50px"]}
               className="text-uppercase"
             >
-              Not Just Traditional Immigration Company
+              Not Just <br />
+              Traditional <br />
+              Immigration Company
             </Typography>
             <Typography
               as="p"
@@ -75,37 +77,41 @@ function ImmigrationIndex({}: Props) {
             </Typography>
             <div className="row">
               {numberHome.map((item, index) => (
-              <div className="col-md-6" key={item.id}>
-                                <div className="numberSec">
-                  <Typography
-                    as="p"
-                    _color="#000"
-                    _fontSize={["20px", "42px"]}
-                    _fontWeight={[700, 700]}
-                    _lineHeight={["30px", "32px"]}
-                    className="numberText mt-4"
-                  >
-                    {item.number}<span>+</span>
-                  </Typography>
-                  <Typography
-                    as="p"
-                    _color="#28003B"
-                    _fontSize={["20px", "18px"]}
-                    _fontWeight={[400, 400]}
-                    _lineHeight={["30px", "32px"]}
-                    className="mt-3"
-                  >
-                    {item.title}
-                  </Typography>
+                <div className="col-md-6" key={item.id}>
+                  <div className="numberSec">
+                    <Typography
+                      as="p"
+                      _color="#000"
+                      _fontSize={["20px", "42px"]}
+                      _fontWeight={[700, 700]}
+                      _lineHeight={["30px", "32px"]}
+                      className="numberText mt-4"
+                    >
+                      {item.number}
+                      <span>+</span>
+                    </Typography>
+                    <Typography
+                      as="p"
+                      _color="#28003B"
+                      _fontSize={["20px", "18px"]}
+                      _fontWeight={[400, 400]}
+                      _lineHeight={["30px", "32px"]}
+                      className="mt-3"
+                    >
+                      {item.title}
+                    </Typography>
+                  </div>
                 </div>
-              </div>
-            ))}
-              </div>
-              <div className="seeBtn">
-              <a href="javascript:viod(0)">See what you get with Elaar<img src="images/arrows-arrow-up-right.svg" alt="images" /></a>
-              </div>
+              ))}
+            </div>
+            <div className="seeBtn">
+              <a href="javascript:viod(0)">
+                See what you get with Elaar
+                <img src="images/Arrows-arrow-up-down.svg" alt="images" />
+              </a>
             </div>
           </div>
+        </div>
       </div>
     </ImmigrationStyle>
   );

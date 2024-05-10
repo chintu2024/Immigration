@@ -1,19 +1,24 @@
-import React from 'react'
-import Images from '../Images'
-import Typography from '../Typography'
-import StyleCourseCard from './StyleCourseCard'
+import React from "react";
+import Images from "../Images";
+import Typography from "../Typography";
+import StyleCourseCard from "./StyleCourseCard";
 
 interface Props {
-    item?:any;
+  item?: any;
 }
 
 const CourseCard = (props: Props) => {
   return (
     <StyleCourseCard>
-        <div className="card">
-            <Images src={props.item.Images} alt={'images'} width="100%" height={205}></Images>
-            <div className="cardText">
-            <Typography
+      <div className="card">
+        <Images
+          src={props.item.Images}
+          alt={"images"}
+          width="100%"
+          height={205}
+        ></Images>
+        <div className="cardText">
+          <Typography
             as="p"
             _color="#000"
             _fontSize={["22px", "28px"]}
@@ -32,20 +37,22 @@ const CourseCard = (props: Props) => {
             _lineHeight={["24px", "30px"]}
             className="mt-2 mb-3"
           >
-           {props.item.subTitle}
+            {props.item.subTitle}
           </Typography>
           <ul className="pageList">
-              {props.item.link.slice(0, 6).map((item: any, index: any) => (
-              <li key={index}><a href="javascript void(0)">{item.linkData}</a></li>
-              ))}
+            {props.item.link.slice(0, 6).map((item: any, index: any) => (
+              <li key={index}>
+                <a href="javascript void(0)">{item.linkData}</a>
+              </li>
+            ))}
           </ul>
           <div className="applyBtn">
-              <a href="">Apply Student Visa</a>
+            <a href="">Apply Student Visa</a>
           </div>
-            </div>
         </div>
+      </div>
     </StyleCourseCard>
-  )
-}
+  );
+};
 
-export default CourseCard
+export default CourseCard;

@@ -13,7 +13,6 @@ export const BookConsultionData = {
   ulDataspan4: "5",
 };
 
-
 export const numberHome = [
   {
     id: "1",
@@ -39,55 +38,57 @@ export const numberHome = [
 
 export const checkEligibility = [
   {
-    id : "1",
-    title : "Business Assessment",
-    description : "Determine your eligibility for Canada business immigration.",
-    images : "images/eligibility1.svg"
+    id: "1",
+    title: "Business Assessment",
+    description: "Determine your eligibility for Canada business immigration.",
+    images: "images/eligibility1.svg",
   },
   {
-    id : "2",
-    title : "BC PNP Calculator",
-    description : "Use BC PNP Points calculator to check your eligibility.",
-    images : "images/eligibility2.svg"
+    id: "2",
+    title: "BC PNP Calculator",
+    description: "Use BC PNP Points calculator to check your eligibility.",
+    images: "images/eligibility2.svg",
   },
   {
-    id : "3",
-    title : "FSW Calculator",
-    description : "Check your points for Federal Skilled Worker Program.",
-    images : "images/eligibility3.svg"
+    id: "3",
+    title: "FSW Calculator",
+    description: "Check your points for Federal Skilled Worker Program.",
+    images: "images/eligibility3.svg",
   },
   {
-    id : "4",
-    title : "CRS Calculator",
-    description : "Calculate your CRS Points for all express entry programs.",
-    images : "images/eligibility4.svg"
+    id: "4",
+    title: "CRS Calculator",
+    description: "Calculate your CRS Points for all express entry programs.",
+    images: "images/eligibility4.svg",
   },
-]
+];
 
 export const processData = [
   {
-    id:"1",
-    title : "Inquiry",
-    description : "Welcome! Your journey starts here..."
+    id: "1",
+    title: "Inquiry",
+    description: "Welcome! Your journey starts here...",
   },
   {
-    id:"2",
-    title : "Expert counselling",
-    description : "Our team of dedicated counselors is here to help you find your path."
+    id: "2",
+    title: "Expert counselling",
+    description:
+      "Our team of dedicated counselors is here to help you find your path.",
   },
   {
-    id:"3",
-    title : "Documentation",
-    description : "All your document will compiled to create strong application"
+    id: "3",
+    title: "Documentation",
+    description: "All your document will compiled to create strong application",
   },
   {
-    id:"4",
-    title : "Eligibility",
-    description : "Sign-up with us to check your eligibility"
+    id: "4",
+    title: "Eligibility",
+    description: "Sign-up with us to check your eligibility",
   },
   {
-    img:"images/material-symbols-light_rocket-launch-outline.png",
-    title : "Proccesing ",
-    description : "All your documents will compiled to create strong application"
+    img: "images/material-symbols-light_rocket-launch-outline.png",
+    title: "Proccesing ",
+    description:
+      "All your documents will compiled to create strong application",
   },
-]
+];

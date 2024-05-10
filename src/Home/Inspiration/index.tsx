@@ -18,9 +18,9 @@ const Inspiration = (props: Props) => {
               _fontSize={["14px", "32px"]}
               _fontWeight={[600, 600]}
               _lineHeight={["14px", "24px"]}
-              className="title"
+              className="title2"
             >
-              Looking for  an Inspiration?
+              Looking for an Inspiration?
               <Images
                 src={"images/logotick.png"}
                 alt={"images"}
@@ -36,7 +36,7 @@ const Inspiration = (props: Props) => {
               _lineHeight={["14px", "30px"]}
               className="mt-3"
             >
-              Check these testimonials from esteemed members of Elaar family  to
+              Check these testimonials from esteemed members of Elaar family to
               know how we helped them get a Visa
             </Typography>
           </div>
@@ -52,9 +52,9 @@ const Inspiration = (props: Props) => {
               _fontSize={["14px", "32px"]}
               _fontWeight={[600, 600]}
               _lineHeight={["35px", "44px"]}
-              className="my-4"
+              className="maintitla"
             >
-              India's No.1 Immigration & Study Visa Consultant
+              Indias No.1 Immigration & Study Visa Consultant
             </Typography>
             <Typography
               as="h3"
@@ -72,7 +72,7 @@ const Inspiration = (props: Props) => {
               Consultants to assist others in their journey to Canada. Canada
               stands as a popular destination for immigrants from India,
               offering a high standard of living, excellent healthcare system,
-              and rich cultural heritage. If you're considering immigrating to
+              and rich cultural heritage. If youre considering immigrating to
               Canada from India, there are several immigration services ready to
               assist you throughout the process. Canada also offers a range of
               Provincial Nominee Programs (PNPs), which are designed to fill
@@ -91,12 +91,13 @@ const Inspiration = (props: Props) => {
               className="immImages"
             ></Images>
           </div>
-          <div className="col-md-7 mt-5">
+          <div className="col-md-7 destoppd">
             <Images
               src={"images/bannerColor.svg"}
               alt={"images"}
               width={77}
               height={27}
+              className="pt-3"
             ></Images>
             <Typography
               as="h2"
@@ -123,7 +124,7 @@ const Inspiration = (props: Props) => {
               className="mt-4"
             >
               Take the definitive assessment provided on the following page and
-              schedule a complimentary consultation call with us. Allow us to 
+              schedule a complimentary consultation call with us. Allow us to
               help you gain clarity on your immigration options available.
             </Typography>
             <div className="callBtn">

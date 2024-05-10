@@ -7,6 +7,10 @@ const ImmigrationStyle = styled.section`
     text-align: right;
     border-radius: 162px 162px 0px 162px;
     position: relative;
+    padding: 40px 0px;
+  }
+  .imagesSection {
+    padding-right: 30px;
   }
   .satisfied {
     position: absolute;
@@ -40,11 +44,11 @@ const ImmigrationStyle = styled.section`
         -webkit-text-fill-color: transparent;
       }
     }
-}
-    .seeBtn {
-      display: flex;
-      align-items: center;
-      a {
+  }
+  .seeBtn {
+    display: flex;
+    align-items: center;
+    a {
       display: flex;
       background-color: #000000;
       color: #fff;
@@ -53,11 +57,11 @@ const ImmigrationStyle = styled.section`
       align-items: center;
       margin-top: 28px;
       border-radius: 12px;
-      :hover{
+      :hover {
         opacity: 0.7;
       }
     }
-    }
+  }
 `;
 
 export default ImmigrationStyle;

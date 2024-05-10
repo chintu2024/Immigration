@@ -7,7 +7,7 @@ interface Button {
   fontWeight?: any;
   themeColor?: any;
   bdrRadius?: any;
-  fontsize?:any;
+  fontsize?: any;
   height?: any;
 }
 
@@ -22,19 +22,19 @@ const ImButton = styled.button<Button>`
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : "600")};
   align-items: center;
   border-radius: ${(props) => (props.bdrRadius ? props.bdrRadius : "4px")};
-  height: ${(props) => (props.height? props.height : "50px")};
+  height: ${(props) => (props.height ? props.height : "50px")};
   &:hover {
     opacity: 0.9;
   }
   ${(props) =>
     props.variant === "primary" &&
     css`
-      border: 1px solid ${props.themeColor?.colors?.main};
+      border: 0px solid ${props.themeColor?.colors?.main};
       color: ${props.themeColor?.colors?.white};
       background-color: ${props.themeColor?.colors?.black};
     `}
 
-    ${(props) =>
+  ${(props) =>
     props.variant === "primaryOutline" &&
     css`
       border: 1px solid ${props.themeColor?.colors?.brand_primary?.main};

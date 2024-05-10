@@ -48,15 +48,21 @@ const CheckEligibilityIndex = (props: Props) => {
               </div>
             </div>
           </div>
-          {checkEligibility.length>1 && <div className="col-md-6 offset-md-1">
-            <div className="row">
-              {checkEligibility.map((item, index) => (
-                <div className="col-md-6" key={index}>
-                  <CardIndex images={item.images} title={item.title} description={item.description}/>
-                </div>
-              ))}
+          {checkEligibility.length > 1 && (
+            <div className="col-md-6 offset-md-1">
+              <div className="row">
+                {checkEligibility.map((item, index) => (
+                  <div className="col-md-6" key={index}>
+                    <CardIndex
+                      images={item.images}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>}
+          )}
         </div>
       </div>
     </CheckEligibilityStyle>

@@ -7,8 +7,10 @@ interface Props {}
 
 const Footer = (props: Props) => {
   useEffect(() => {
-    let titleBtn: HTMLCollectionOf<Element> = document.getElementsByClassName("titleBtn");
-    let footerUl: HTMLCollectionOf<Element> = document.getElementsByClassName("footerUl");
+    let titleBtn: HTMLCollectionOf<Element> =
+      document.getElementsByClassName("titleBtn");
+    let footerUl: HTMLCollectionOf<Element> =
+      document.getElementsByClassName("footerUl");
 
     for (let i = 0; i < titleBtn.length; i++) {
       (footerUl[i] as HTMLElement).classList.add("phoneNone");
@@ -23,7 +25,7 @@ const Footer = (props: Props) => {
         }
       });
     }
-  }, []);  
+  }, []);
   return (
     <StyleFooter>
       <div className="container">
@@ -40,12 +42,26 @@ const Footer = (props: Props) => {
               Trending Programs
             </Typography>
             <ul className="footerUl">
-                <li><a href="javascript:void(0)">Popular Course Program  in Canada</a></li>
-                <li><a href="javascript:void(0)">Permanent Resident Visa (PRS)</a></li>
-                <li><a href="javascript:void(0)">Foreign entrepreneurs Visa</a></li>
-                <li><a href="javascript:void(0)">Permanent Resident Visa (PRS)</a></li>
-                <li><a href="javascript:void(0)">Post graduation work permits</a></li>
-                <li><a href="javascript:void(0)">Employer Specific Work Visa</a></li>
+              <li>
+                <a href="javascript:void(0)">
+                  Popular Course Program in Canada
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Permanent Resident Visa (PRS)</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Foreign entrepreneurs Visa</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Permanent Resident Visa (PRS)</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Post graduation work permits</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Employer Specific Work Visa</a>
+              </li>
             </ul>
           </div>
           <div className="col-md-3">
@@ -60,13 +76,27 @@ const Footer = (props: Props) => {
               Immigration
             </Typography>
             <ul className="footerUl">
-                <li><a href="javascript:void(0)">Express Entry</a></li>
-                <li><a href="javascript:void(0)">BC PNP Program</a></li>
-                <li><a href="javascript:void(0)">Provincial Nominee Program</a></li>
-                <li><a href="javascript:void(0)">Business Immigration</a></li>
-                <li><a href="javascript:void(0)">Caregiver Programs</a></li>
-                <li><a href="javascript:void(0)">Atlantic Immigration</a></li>
-                <li><a href="javascript:void(0)">Quebec Immigration</a></li>
+              <li>
+                <a href="javascript:void(0)">Express Entry</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">BC PNP Program</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Provincial Nominee Program</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Business Immigration</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Caregiver Programs</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Atlantic Immigration</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Quebec Immigration</a>
+              </li>
             </ul>
           </div>
           <div className="col-md-3">
@@ -81,9 +111,15 @@ const Footer = (props: Props) => {
               Visa
             </Typography>
             <ul className="footerUl">
-                <li><a href="javascript:void(0)">Express Entry</a></li>
-                <li><a href="javascript:void(0)">BC PNP Program</a></li>
-                <li><a href="javascript:void(0)">Provincial Nominee Program</a></li>
+              <li>
+                <a href="javascript:void(0)">Express Entry</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">BC PNP Program</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Provincial Nominee Program</a>
+              </li>
             </ul>
             <Typography
               as="h3"
@@ -96,9 +132,15 @@ const Footer = (props: Props) => {
               Study
             </Typography>
             <ul className="footerUl">
-                <li><a href="javascript:void(0)">Express Entry</a></li>
-                <li><a href="javascript:void(0)">BC PNP Program</a></li>
-                <li><a href="javascript:void(0)">Provincial Nominee Program</a></li>
+              <li>
+                <a href="javascript:void(0)">Express Entry</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">BC PNP Program</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">Provincial Nominee Program</a>
+              </li>
             </ul>
           </div>
           <div className="col-md-3">
@@ -113,8 +155,8 @@ const Footer = (props: Props) => {
               Our Cities
             </Typography>
             <ul className="footerUl">
-                <li>Greater Vancouver</li>
-                <li>#205-14980 104 Ave, Surrey, BC V3R 1M9</li>
+              <li>Greater Vancouver</li>
+              <li>#205-14980 104 Ave, Surrey, BC V3R 1M9</li>
             </ul>
             <Typography
               as="h3"
@@ -127,7 +169,7 @@ const Footer = (props: Props) => {
               Kamloops
             </Typography>
             <ul className="footerUl">
-                <li>#1-237 6th Avenue, Kamloops, BC V2C 2B3</li>
+              <li>#1-237 6th Avenue, Kamloops, BC V2C 2B3</li>
             </ul>
             <Typography
               as="h3"
@@ -140,35 +182,63 @@ const Footer = (props: Props) => {
               Yukon
             </Typography>
             <ul className="footerUl">
-                <li>320 Keno Way, Whitehorse, YT Y1A 0S8</li>
+              <li>320 Keno Way, Whitehorse, YT Y1A 0S8</li>
             </ul>
           </div>
         </div>
       </div>
       <div className="line"></div>
       <div className="container">
-          <div className="row">
-              <div className="col-md-6">
-              <Typography
+        <div className="row">
+          <div className="col-md-6">
+            <Typography
               as="h3"
               _color="#fff"
               _fontSize={["16px", "16px"]}
-              _fontWeight={[600, 600]}
+              _fontWeight={[400, 400]}
               _lineHeight={["28px", "28px"]}
               className="pt-4"
             >
               © 2024 Elaar Immigration Consulting Inc. All rights reserved
             </Typography>
-              </div>
-              <div className="col-md-6">
-                  <div className="d-flex pt-4 socialMedia">
-                      <a href="javascript:void(0)"><Images src={"images/instagram.svg"} alt={"instafram"} width={24} height={24}></Images></a>
-                      <a href="javascript:void(0)"><Images src={"images/facebook.svg"} alt={"facebook"} width={24} height={24}></Images></a>
-                      <a href="javascript:void(0)"><Images src={"images/linkdin.svg"} alt={"linkdin"} width={24} height={24}></Images></a>
-                      <a href="javascript:void(0)"><Images src={"images/youtube.svg"} alt={"youtube"} width={24} height={24}></Images></a>
-                  </div>
-              </div>
           </div>
+          <div className="col-md-6">
+            <div className="d-flex pt-4 socialMedia">
+              <a href="javascript:void(0)">
+                <Images
+                  src={"images/instagram.svg"}
+                  alt={"instafram"}
+                  width={24}
+                  height={24}
+                ></Images>
+              </a>
+              <a href="javascript:void(0)">
+                <Images
+                  src={"images/facebook.svg"}
+                  alt={"facebook"}
+                  width={24}
+                  height={24}
+                ></Images>
+              </a>
+              <a href="javascript:void(0)">
+                <Images
+                  src={"images/linkdin.svg"}
+                  alt={"linkdin"}
+                  width={24}
+                  height={24}
+                ></Images>
+              </a>
+              <a href="javascript:void(0)">
+                <Images
+                  src={"images/youtube.svg"}
+                  alt={"youtube"}
+                  width={24}
+                  height={24}
+                ></Images>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </StyleFooter>
   );

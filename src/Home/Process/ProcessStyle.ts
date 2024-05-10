@@ -9,8 +9,8 @@ const ProcessStyle = styled.section`
     position: relative;
     img {
       position: absolute;
-      bottom: 0px;
-      right: 101px;
+      bottom: -7px;
+      right: 223px;
     }
   }
   .processDiv {
