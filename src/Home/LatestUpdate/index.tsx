@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LatestUpdateStyle from "./latestUpdateStyle";
 import Typography from "src/Common/Typography";
 import Images from "src/Common/Images";
@@ -8,6 +8,30 @@ import NewsList from "./NewsList";
 interface Props {}
 
 const LatestUpdateIndex = (props: Props) => {
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `https://dashboard.elaarimmigration.in/api/blogs`
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const fetchedData = await res.json();
+
+        setBlog(fetchedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or failure
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <LatestUpdateStyle>
       <div className="container">
@@ -21,7 +45,7 @@ const LatestUpdateIndex = (props: Props) => {
               _lineHeight={["14px", "24px"]}
               className="my-2"
             >
-              Latest Update{" "}
+              Latest Update
               <Images
                 src={"images/arrows-arrow-up-right.svg"}
                 alt={"logo Arrow"}
@@ -40,10 +64,22 @@ const LatestUpdateIndex = (props: Props) => {
             </Typography>
           </div>
           <div className="col-md-6">
-            <BigNews />
+            {loading ? (
+              <p>Loading...</p>
+            ) : blog ? (
+              <BigNews blog={blog} />
+            ) : (
+              <p>No data available</p>
+            )}
           </div>
           <div className="col-md-6">
-            <NewsList />
+            {loading ? (
+              <p>Loading...</p>
+            ) : blog ? (
+              <NewsList blog={blog} />
+            ) : (
+              <p>No data available</p>
+            )}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Layout from "src/Common/Layout";
 import ProductsText from "./ProductText";
 import LatestUpdateIndex from "src/Home/LatestUpdate";
 import Inspiration from "src/Home/Inspiration";
-import ProductRight from "./ProductRightSec";
+import ProductRight from "../Common/ProductRightSec";
 import Faq from "src/Common/Faq";
 
 interface Props {}
@@ -20,7 +20,7 @@ const ProductDetails = (props: Props) => {
               <ProductsText />
             </div>
             <div className="col-md-3">
-              <ProductRight />
+              <ProductRight productRight={true} />
             </div>
             <div className="col-md-10 mt-5 mx-auto">
               {[...Array(5)].map((item: any, index: any) => (

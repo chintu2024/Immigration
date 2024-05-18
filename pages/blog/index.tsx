@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
+import BlogList from "src/BlogList";
 import LayOut from "src/Common/Layout";
-import HomePageSkeleton from "src/Common/SkeletonScreen/homePageSkeleton";
-import Home from "src/Home";
+import BlogPageSkeleton from "src/Common/SkeletonScreen/blogPageSkeleton";
 
 interface Props {}
-const Index = (props: Props) => {
-  const [data, setData] = useState(null);
+
+const blogIndex = (props: Props) => {
+  const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/page/home`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/blogs`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
         const fetchedData = await res.json();
 
-        setData(fetchedData);
+        setBlog(fetchedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -28,13 +30,12 @@ const Index = (props: Props) => {
 
     fetchData();
   }, []);
-
   return (
     <LayOut>
       {loading ? (
-       <HomePageSkeleton/>
-      ) : data ? (
-        <Home data={data} />
+        <BlogPageSkeleton/>
+      ) : blog ? (
+        <BlogList blog={blog} />
       ) : (
         <p>No data available</p>
       )}
@@ -42,4 +43,4 @@ const Index = (props: Props) => {
   );
 };
 
-export default Index;
+export default blogIndex;

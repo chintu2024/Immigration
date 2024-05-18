@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import MainAboutStyle from "./MainAboutStyle";
 import Typography from "src/Common/Typography";
 import Images from "src/Common/Images";
@@ -15,6 +15,7 @@ const MainAbout = (props: Props) => {
           {[...Array(5)].map((item, index) => (
             <Scene classToggle="scroll2" pin key={index}>
               <div>
+                <div className="maindivtext"></div>
                 <div className={`aboutFirst ${colors[index]}`}>
                   <div className="row">
                     <div className="col-md-6">

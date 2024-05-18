@@ -1,12 +1,15 @@
-import React from "react";
-import ImmigrationStyle from "./ImmigrationStyle";
+import React, { useEffect, useState } from "react";
 import Images from "src/Common/Images";
 import Typography from "src/Common/Typography";
 import { numberHome } from "../HomeData";
+import Count from "./count";
+import ImmigrationStyle from "./ImmigrationStyle";
 
-interface Props {}
+interface Props {
+  data?: any;
+}
 
-function ImmigrationIndex({}: Props) {
+const index = (props: Props) => {
   return (
     <ImmigrationStyle>
       <div className="container">
@@ -51,56 +54,34 @@ function ImmigrationIndex({}: Props) {
           </div>
           <div className="col-md-6">
             <Typography
-              as="h3"
+              as="div"
               _color="#28003B"
               _fontSize={["20px", "40px"]}
               _fontWeight={[700, 700]}
               _lineHeight={["30px", "50px"]}
               className="text-uppercase"
             >
-              Not Just <br />
-              Traditional <br />
-              Immigration Company
+              <div
+                dangerouslySetInnerHTML={{ __html: props.data.response.title }}
+              />
             </Typography>
             <Typography
-              as="p"
+              as="div"
               _color="#28003B"
               _fontSize={["20px", "18px"]}
               _fontWeight={[400, 400]}
               _lineHeight={["30px", "32px"]}
               className="mt-3"
             >
-              ELAAR Immigration Consulting Inc. is a full-service Canada
-              Immigration firm located in beautiful Vancouver, British Columbia,
-              on the west coast of Canada. Our goal is to simplify the process
-              for immigrants while meeting their needs and wants.
+              <div
+                dangerouslySetInnerHTML={{ __html: props.data.response.desc }}
+              />
+              {/* {props.data.response.desc} */}
             </Typography>
             <div className="row">
               {numberHome.map((item, index) => (
                 <div className="col-md-6" key={item.id}>
-                  <div className="numberSec">
-                    <Typography
-                      as="p"
-                      _color="#000"
-                      _fontSize={["20px", "42px"]}
-                      _fontWeight={[700, 700]}
-                      _lineHeight={["30px", "32px"]}
-                      className="numberText mt-4"
-                    >
-                      {item.number}
-                      <span>+</span>
-                    </Typography>
-                    <Typography
-                      as="p"
-                      _color="#28003B"
-                      _fontSize={["20px", "18px"]}
-                      _fontWeight={[400, 400]}
-                      _lineHeight={["30px", "32px"]}
-                      className="mt-3"
-                    >
-                      {item.title}
-                    </Typography>
-                  </div>
+                  <Count countNumber={item.number} countText={item.title} />
                 </div>
               ))}
             </div>
@@ -115,6 +96,6 @@ function ImmigrationIndex({}: Props) {
       </div>
     </ImmigrationStyle>
   );
-}
+};
 
-export default ImmigrationIndex;
+export default index;

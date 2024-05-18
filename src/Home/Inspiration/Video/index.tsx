@@ -3,37 +3,31 @@ import VideoStyle from "./VideoStyle";
 import Images from "src/Common/Images";
 import Typography from "src/Common/Typography";
 
-interface Props {}
+interface Props {
+  clientVideo?:any;
+}
 
 const VideoIndex = (props: Props) => {
+  console.log("video",props.clientVideo)
   return (
-    <VideoStyle>
-      <div className="videoSec">
-        <div className="videoImagee">
-          <Images
-            src={"images/video.png"}
-            alt={"video"}
-            width={"100%"}
-          ></Images>
-          <Images
-            src={"images/videoarrow.png"}
-            alt={"videoArrow"}
-            width={48}
-            height={48}
-            className="videoarrow"
-          ></Images>
-        </div>
+    <>
+    <div className="row">
+    {props.clientVideo?.response.map((item:any, index:any) => (
+      <div className="col-md-4" key={index}>
+      <VideoStyle>
+        <div className="videoSec">
+        <div dangerouslySetInnerHTML={{ __html: item.youtube_video_link }} />
         <Typography
           as="p"
           _color="#000"
           _fontSize={["14px", "22px"]}
           _fontWeight={[700, 700]}
           _lineHeight={["20px", "35px"]}
-          className="mt-2"
+          className="mt-2 videoTitle"
         >
-          Anisha Naidu
+          {item.youtube_video_title}
         </Typography>
-        <Typography
+        {/* <Typography
           as="p"
           _color="#000"
           _fontSize={["14px", "16px"]}
@@ -42,9 +36,13 @@ const VideoIndex = (props: Props) => {
           className="mt-0"
         >
           Canada PR Visa
-        </Typography>
+        </Typography> */}
       </div>
-    </VideoStyle>
+      </VideoStyle>
+      </div>
+      ))}
+       </div>
+    </>
   );
 };
 

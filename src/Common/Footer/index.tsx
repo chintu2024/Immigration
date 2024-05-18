@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Images from "../Images";
 import Typography from "../Typography";
 import StyleFooter from "./StyleFooter";
+import SocialMedia from "./SocialMedia";
 
 interface Props {}
 
 const Footer = (props: Props) => {
+  const [socialMedia, setSocialMedia] = useState(null);
   useEffect(() => {
     let titleBtn: HTMLCollectionOf<Element> =
       document.getElementsByClassName("titleBtn");
@@ -25,6 +27,26 @@ const Footer = (props: Props) => {
         }
       });
     }
+  }, []);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/media`
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const fetchedData = await res.json();
+
+        setSocialMedia(fetchedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } 
+    };
+
+    fetchData();
   }, []);
   return (
     <StyleFooter>
@@ -202,42 +224,8 @@ const Footer = (props: Props) => {
               © 2024 Elaar Immigration Consulting Inc. All rights reserved
             </Typography>
           </div>
-          <div className="col-md-6">
-            <div className="d-flex pt-4 socialMedia">
-              <a href="javascript:void(0)">
-                <Images
-                  src={"images/instagram.svg"}
-                  alt={"instafram"}
-                  width={24}
-                  height={24}
-                ></Images>
-              </a>
-              <a href="javascript:void(0)">
-                <Images
-                  src={"images/facebook.svg"}
-                  alt={"facebook"}
-                  width={24}
-                  height={24}
-                ></Images>
-              </a>
-              <a href="javascript:void(0)">
-                <Images
-                  src={"images/linkdin.svg"}
-                  alt={"linkdin"}
-                  width={24}
-                  height={24}
-                ></Images>
-              </a>
-              <a href="javascript:void(0)">
-                <Images
-                  src={"images/youtube.svg"}
-                  alt={"youtube"}
-                  width={24}
-                  height={24}
-                ></Images>
-              </a>
-            </div>
-          </div>
+          {socialMedia && 
+          <SocialMedia socialink={socialMedia}/>}
         </div>
       </div>
     </StyleFooter>

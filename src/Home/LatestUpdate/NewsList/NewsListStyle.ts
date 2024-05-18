@@ -8,7 +8,7 @@ const NewsListStyle = styled.div`
     padding-bottom: 20px;
     gap: 64px;
     img {
-      border-radius: 0px 0px 60px 60px;
+      border-radius: 0px 0px 60px 45px;
       padding-right: 23px;
     }
   }

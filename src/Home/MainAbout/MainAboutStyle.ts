@@ -2,6 +2,10 @@ import styled from "styled-components";
 import theme from "styles/themeColor";
 
 const MainAboutStyle = styled.section`
+  .maindivtext {
+    height: 100px;
+    width: 100%;
+  }
   .scrollmagic-pin-spacer {
     margin-bottom: 40px !important;
     .aboutFirst {
@@ -10,7 +14,7 @@ const MainAboutStyle = styled.section`
       padding: 80px 60px;
       overflow: hidden;
       z-index: 1;
-      margin: 40px 0px;
+      /* margin: 40px 0px; */
       transition: all 1s ease-in-out;
     }
     .color1 {
@@ -24,16 +28,34 @@ const MainAboutStyle = styled.section`
     }
     .color4 {
       background-color: #fee300;
+      p {
+        color: #000 !important;
+      }
+      h3 {
+        color: #000 !important;
+      }
+      a {
+        color: #000 !important;
+      }
+      li {
+        border-bottom: 1px solid #000;
+        ::before {
+          filter: invert(1);
+        }
+      }
+      .AppyImmigration a {
+        border: 1px solid #000;
+      }
     }
     .color5 {
       background-color: #304656;
     }
     :nth-child(1) .scroll2 .aboutFirst {
-      margin: 0px 30px !important;
+      margin: 0px 25px !important;
       transition: all 1s ease-in-out;
     }
     :nth-child(2) .scroll2 .aboutFirst {
-      margin: 10px 25px !important;
+      margin: 10px 20px !important;
     }
     :nth-child(3) .scroll2 .aboutFirst {
       margin: 20px 15px !important;

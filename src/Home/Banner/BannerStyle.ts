@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
 const BannerStyle = styled.div`
+  .bannerImages {
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    z-index: -9;
+    border-radius: 0px 0px 62px 62px;
+  }
+  .slick-list {
+    border-radius: 0px 0px 62px 62px;
+  }
   .bannerBg {
-    background-image: url(images/banner1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
     padding: 147px 0px;
     border-radius: 0px 0px 62px 62px;
     .title {

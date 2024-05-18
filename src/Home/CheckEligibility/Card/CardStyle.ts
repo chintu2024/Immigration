@@ -8,16 +8,19 @@ const CardStyle = styled.div`
     padding: 40px 20px;
     border-radius: 22px;
     text-align: center;
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
     h3 {
-      transition: all 1s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     p {
-      transition: all 1s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     a {
-      transition: all 1s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    img {
+      transition: all 0.3s ease-in-out;
     }
     :hover {
       background-color: ${theme.colors.btn};
@@ -31,8 +34,8 @@ const CardStyle = styled.div`
       p {
         color: #fff;
       }
-      svg {
-        fill: #fff;
+      img {
+        filter: invert(1);
       }
     }
   }

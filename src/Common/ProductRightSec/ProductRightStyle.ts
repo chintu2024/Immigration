@@ -36,7 +36,7 @@ const ProductRightStyle = styled.div`
   .recentPost::before {
     content: "";
     position: absolute;
-    background: url(images/Chevrons-chevron-right.png) no-repeat;
+    background: url(/images/Chevrons-chevron-right.png) no-repeat;
     width: 24px;
     height: 24px;
     left: 0px;

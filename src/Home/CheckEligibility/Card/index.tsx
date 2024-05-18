@@ -16,9 +16,10 @@ const CardIndex = (props: Props) => {
         <Images
           src={props.images}
           alt={"check aligibility"}
-          width={146}
-          height={141}
+          width={84}
+          height={84}
         ></Images>
+
         <Typography
           as="h3"
           _color="#000"

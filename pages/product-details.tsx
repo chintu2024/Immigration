@@ -1,10 +1,10 @@
 import React from "react";
 import ProductDetails from "src/Product";
 
-type Props = {};
+interface Props {}
 
-function Product({}: Props) {
+const ProductDetailsIndex = (props: Props) => {
   return <ProductDetails />;
-}
+};
 
-export default Product;
+export default ProductDetailsIndex;

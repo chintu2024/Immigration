@@ -24,6 +24,13 @@ const Banner = (props: Props) => {
       <SlickStyles>
         <Slider {...settings}>
           <div className="bannerBg">
+            <Images
+              src={"images/banner1.png"}
+              alt={"images"}
+              width={"100%"}
+              height={"auto"}
+              className="bannerImages"
+            ></Images>
             <div className="container">
               <div className="row">
                 <div className="col-md-6 offset-md-6">

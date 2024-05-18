@@ -3,8 +3,8 @@ import AboutIndex from "src/About";
 
 interface Props {}
 
-const about = (props: Props) => {
+const AboutIndexPage = (props: Props) => {
   return <AboutIndex />;
 };
 
-export default about;
+export default AboutIndexPage;

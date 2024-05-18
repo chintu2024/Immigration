@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InspirationStyle from "./InspirationStyle";
 import Typography from "src/Common/Typography";
 import Images from "src/Common/Images";
 import VideoIndex from "./Video";
 
-interface Props {}
+interface Props {
+  data?: any;
+}
 
 const Inspiration = (props: Props) => {
+  const [clientVideo, setClientVideo] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/client`
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const fetchedData = await res.json();
+
+        setClientVideo(fetchedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } 
+    };
+
+    fetchData();
+  }, []);
   return (
     <InspirationStyle>
       <div className="container">
@@ -40,13 +62,10 @@ const Inspiration = (props: Props) => {
               know how we helped them get a Visa
             </Typography>
           </div>
-          {[...Array(3)].map((item, index) => (
-            <div className="col-md-4" key={index}>
-              <VideoIndex />
+              <VideoIndex clientVideo={clientVideo}/>
             </div>
-          ))}
           <div className="col-md-12">
-            <Typography
+            {/* <Typography
               as="h3"
               _color="#28003B"
               _fontSize={["14px", "32px"]}
@@ -55,34 +74,19 @@ const Inspiration = (props: Props) => {
               className="maintitla"
             >
               Indias No.1 Immigration & Study Visa Consultant
-            </Typography>
+            </Typography> */}
             <Typography
-              as="h3"
+              as="div"
               _color="#28003B"
               _fontSize={["14px", "16px"]}
               _fontWeight={[400, 400]}
               _lineHeight={["35px", "30px"]}
-              className=""
+              className="maintitla"
             >
-              Your immigration journey is special, and our aim is to simplify it
-              as much as possible for you. Drawing from our personal experiences
-              of immigrating to Canada, we understand the intricacies involved.
-              Complementing this personal touch, we bring our licensing,
-              training, and certification as Regulated Canadian Immigration
-              Consultants to assist others in their journey to Canada. Canada
-              stands as a popular destination for immigrants from India,
-              offering a high standard of living, excellent healthcare system,
-              and rich cultural heritage. If youre considering immigrating to
-              Canada from India, there are several immigration services ready to
-              assist you throughout the process. Canada also offers a range of
-              Provincial Nominee Programs (PNPs), which are designed to fill
-              employment gaps in certain provinces. These programs allow
-              provinces to nominate immigrants who have specific skills and
-              experience as per the need and requirement in those provinces.
-              Provincial Nominee Programs provide a fast-track for immigration
-              to Canada.
+              <div dangerouslySetInnerHTML={{ __html: props.data }} />
             </Typography>
           </div>
+          <div className="row">
           <div className="col-md-5 mt-5">
             <Images
               src={"images/imm.png"}
@@ -138,7 +142,7 @@ const Inspiration = (props: Props) => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </InspirationStyle>
   );
 };

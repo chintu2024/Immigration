@@ -38,7 +38,7 @@ export const OnlineTextStyle = styled.div`
     padding-right: 18px;
     img {
       border-radius: 22px;
-      vertical-align:middle;
+      vertical-align: middle;
       margin-right: 10px;
     }
   }

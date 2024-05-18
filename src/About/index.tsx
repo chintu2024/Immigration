@@ -41,38 +41,39 @@ const AboutIndex = (props: Props) => {
       <Services />
       <section className="mt-5">
         <div className="container">
-            <div className="row">
-                <div className="col-md-6">
-                    <OnlineText/>
-                </div>
-                <div className="col-md-6">
-                    <ImmigrationText/>
-                </div>
+          <div className="row">
+            <div className="col-md-6">
+              <OnlineText />
             </div>
+            <div className="col-md-6">
+              <ImmigrationText />
+            </div>
+          </div>
         </div>
       </section>
       <section className="mt-5">
         <div className="container">
-            <div className="row">
-                <div className="col-md-4">
-                <Typography
-              as="h2"
-              _color="#082F4A"
-              _fontSize={["50px", "16px"]}
-              _fontWeight={[400, 400]}
-              _lineHeight={["35px", "30px"]}
-              className=""
-            >
-              We are helping 1000s Indian to achieve their dream of living, working, or studying in the Canada.
-            </Typography>
-                </div>
-                <div className="col-md-7 offset-md-1">
-                    <ClientLogo/>
-                </div>
+          <div className="row">
+            <div className="col-md-4">
+              <Typography
+                as="h2"
+                _color="#082F4A"
+                _fontSize={["50px", "16px"]}
+                _fontWeight={[400, 400]}
+                _lineHeight={["35px", "30px"]}
+                className=""
+              >
+                We are helping 1000s Indian to achieve their dream of living,
+                working, or studying in the Canada.
+              </Typography>
             </div>
+            <div className="col-md-7 offset-md-1">
+              <ClientLogo />
+            </div>
+          </div>
         </div>
       </section>
-      <Inspiration /> 
+      {/* <Inspiration/>  */}
     </LayOut>
   );
 };

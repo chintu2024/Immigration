@@ -16,22 +16,22 @@ export const BookConsultionData = {
 export const numberHome = [
   {
     id: "1",
-    number: "6",
+    number: 6,
     title: "Years Expirence",
   },
   {
     id: "2",
-    number: "15000",
+    number: 15000,
     title: "Immigration Consulted",
   },
   {
     id: "3",
-    number: "6000",
+    number: 6000,
     title: "Work Permit Expeience",
   },
   {
     id: "4",
-    number: "30",
+    number: 30,
     title: "In top 10 business",
   },
 ];

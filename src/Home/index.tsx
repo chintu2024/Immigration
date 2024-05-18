@@ -7,18 +7,20 @@ import CheckEligibilityIndex from "./CheckEligibility";
 import ProcessIndex from "./Process";
 import LatestUpdateIndex from "./LatestUpdate";
 import Inspiration from "./Inspiration";
-interface Props {}
+interface Props {
+  data?: any;
+}
 
 const Home = (props: Props) => {
   return (
     <StyleHome>
       <Banner />
-      <ImmigrationIndex />
+      <ImmigrationIndex data={props.data} />
       <MainAbout />
       <CheckEligibilityIndex />
       <ProcessIndex />
       <LatestUpdateIndex />
-      <Inspiration />
+      <Inspiration data={props.data.response.footer} />
     </StyleHome>
   );
 };
