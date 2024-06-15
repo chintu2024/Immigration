@@ -24,7 +24,7 @@ const BigNews = (props: Props) => {
         return (
           <div className="ImagesSec" key={index}>
             <Link
-              href={`blog/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item._id}`}
+              href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <Images
                 src={`${process.env.NEXT_PUBLIC_Images_URL}${item.image}`}
@@ -44,7 +44,7 @@ const BigNews = (props: Props) => {
               EXPRESS ENTRY
             </Typography>
             <Link
-              href={`blog/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item._id}`}
+              href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <Typography
                 as="div"

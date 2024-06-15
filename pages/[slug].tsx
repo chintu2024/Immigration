@@ -1,34 +1,33 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import BlogDetailsPage from "src/BlogDetailsPage";
-import LayOut from "src/Common/Layout";
+import Layout from "src/Common/Layout";
 import BlogDetailsPageSkeleton from "src/Common/SkeletonScreen/blogDetailsPageSkeleton";
+import ProductDetails from "src/Product";
 
-interface Props {
-  id?: any;
-  slug? :any;
-}
-const BlogDetails = (props: Props) => {
+interface Props {}
+
+const ProductDetailsIndex = (props: Props) => {
   const router = useRouter();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const extracted = router.asPath.split("-").join(" ");
-  const slugurl = extracted.split("/")
-  const slug = slugurl.slice(2).join(" ")
+  const urlParts = router.asPath.split("-");
+  const text = urlParts.slice(1, -1).join(" ");
+  const basecategory = text.replace("/","")
+  console.log("category", basecategory)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/blogs`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/product_all`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
         const item = await res.json();
         const fetchedData = await item.response.find(
-          (item: any) => item.slug === slug
+          (item: any) => item._id === "666a7199a7a77353917fcaaa"
         );
-        console.log(fetchedData)
+        // console.log("data",fetchedData)
 
         setData(fetchedData);
       } catch (error) {
@@ -39,19 +38,18 @@ const BlogDetails = (props: Props) => {
     };
 
     fetchData();
-  }, [slug]);
-
+  }, [basecategory]);
   return (
-    <LayOut>
+    <Layout>
       {loading ? (
         <BlogDetailsPageSkeleton />
       ) : data ? (
-        <BlogDetailsPage data={data} />
+        <ProductDetails data={data} />
       ) : (
-        <p>error</p>
+        <p>data has not loaded</p>
       )}
-    </LayOut>
-  );
+  </Layout>
+  )
 };
 
-export default BlogDetails;
+export default ProductDetailsIndex;

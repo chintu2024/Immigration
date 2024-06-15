@@ -3,7 +3,9 @@ import ProductsTextStyle from "./ProductsTextStyle";
 import Images from "src/Common/Images";
 import Typography from "src/Common/Typography";
 
-interface Props {}
+interface Props {
+  data?: any;
+}
 
 const ProductsText = (props: Props) => {
   return (
@@ -14,103 +16,43 @@ const ProductsText = (props: Props) => {
         width={78}
         height={27}
       ></Images>
-      <Typography
-        as="h2"
+      {/* <Typography
+        as="div"
         _color="#000"
         _fontSize={["30px", "42px"]}
         _fontWeight={[600, 600]}
         _lineHeight={["40px", "54px"]}
-        className="mt-2"
+        className=""
       >
-        Work in Canada: Canadian Work Permit & Visa Process
-      </Typography>
-      <Typography
-        as="p"
-        _color="#000"
-        _fontSize={["18px", "22px"]}
-        _fontWeight={[400, 400]}
-        _lineHeight={["34px", "38px"]}
-        className="mt-4"
-      >
-        Canada attracts foreign workers and entrepreneurs because of its diverse
-        and bustling economy. Non-Canadians who wish to work in the country
-        legally will require a work permit to do so. A foreigner may be eligible
-        for the various Canada Work Permit Visa options if they meet specific
-        requirements. This guide will describe each type of work visa and its
-        requirements.
-      </Typography>
-      <Images
-        src={"images/p1.jpg"}
-        alt={"images"}
-        width={"100%"}
-        className="mt-4"
-      ></Images>
+        </Typography> */}
+      <div
+        className="mt-2 headingText"
+        dangerouslySetInnerHTML={{ __html: props.data.desc }}
+      />
 
-      <Typography
-        as="h4"
-        _color="#000"
-        _fontSize={["20px", "24px"]}
-        _fontWeight={[600, 600]}
-        _lineHeight={["36px", "40px"]}
-        className="mt-4"
-      >
-        How we can help you to get temporary foreign worker program
-      </Typography>
+      {props.data.productdata.map((item: any, index: any) => (
+        <div key={index}>
+           <div className="mt-2"
+        dangerouslySetInnerHTML={{ __html: item.productDesc }}/>
+        {item.productImage && 
+        <div className="text-center">
+          <Images
+            src={`${process.env.NEXT_PUBLIC_Images_URL}${item.productImage}`}
+            alt={"images"}
+            width={"100%"}
+            className="mt-4"
+          ></Images>
+          </div>
+          }
+        
+        {item.prodcuctLink && <div className="mt-2 video"
+        dangerouslySetInnerHTML={{ __html: item.prodcuctLink}}/>
+         }
+        </div>
+       
+        
+      ))}
 
-      <div className="text-center">
-        <Images
-          src={"images/p2.jpg"}
-          alt={"images"}
-          width={"90%"}
-          className="mt-4"
-        ></Images>
-      </div>
-
-      <Typography
-        as="h4"
-        _color="#000"
-        _fontSize={["20px", "24px"]}
-        _fontWeight={[600, 600]}
-        _lineHeight={["36px", "40px"]}
-        className="mt-4"
-      >
-        Basic Steps for Temporary foreign worker program
-      </Typography>
-
-      <Typography
-        as="p"
-        _color="#000"
-        _fontSize={["18px", "22px"]}
-        _fontWeight={[400, 400]}
-        _lineHeight={["34px", "38px"]}
-        className="mt-4"
-      >
-        British Columbia Provincial Nominee Program (BC PNP) is an immigration
-        program offered by the Government of British Columbia. It has unique
-        streams and categories to select and nominate foreign-skilled workers,
-        international graduates, post-graduates, health workers and
-        entrepreneurs. Each BC PNP Program has distinct eligibility requirements
-        catering to different categories of immigrants willing to move to
-        British Columbia.
-      </Typography>
-
-      <Images
-        src={"images/p3.jpg"}
-        alt={"images"}
-        width={"100%"}
-        className="mt-4"
-      ></Images>
-
-      <Typography
-        as="h4"
-        _color="#000"
-        _fontSize={["20px", "24px"]}
-        _fontWeight={[600, 600]}
-        _lineHeight={["36px", "40px"]}
-        className="mt-4"
-      >
-        Benefits of Canadian Work Permit
-      </Typography>
     </ProductsTextStyle>
   );
 };
