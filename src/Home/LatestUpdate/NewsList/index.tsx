@@ -35,7 +35,7 @@ const NewsList = (props: Props) => {
           <div className="newsList" key={index}>
             <div>
               <Link
-                href={`blog/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item._id}`}
+                href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 <Typography
                   as="p"

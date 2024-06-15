@@ -4,35 +4,44 @@ import Layout from "src/Common/Layout";
 import ProductsText from "./ProductText";
 import LatestUpdateIndex from "src/Home/LatestUpdate";
 import Inspiration from "src/Home/Inspiration";
-import ProductRight from "../Common/ProductRightSec";
+import ProductRight from "../Common/ProductRightSec2";
 import Faq from "src/Common/Faq";
+import Typography from "src/Common/Typography";
 
-interface Props {}
+interface Props {
+  data?:any;
+}
 
 const ProductDetails = (props: Props) => {
   const [according, setAccording] = useState(true);
+  // console.log(props.data)
   return (
     <ProductStyle>
-      <Layout>
         <div className="container mt-4">
           <div className="row">
             <div className="col-md-9 protMr">
-              <ProductsText />
+              <ProductsText data={props.data}/>
             </div>
             <div className="col-md-3">
-              <ProductRight productRight={true} />
+              <ProductRight productRight={true} data={props.data}/>
             </div>
             <div className="col-md-10 mt-5 mx-auto">
-              {[...Array(5)].map((item: any, index: any) => (
+            <Typography
+              as="p"
+              _color="#000"
+              _fontSize={["12px", "22px"]}
+              _fontWeight={[600, 600]}
+              _lineHeight={["20px", "25px"]}
+              className="text-center mb-4"
+            >
+             {props.data.faqheading}
+            </Typography>
+              {props.data.faqdata.map((item: any, index: any) => (
                 <div key={index}>
                   <Faq
                     according={according}
-                    Title={
-                      "Who is the perfect candidate for the Canadian work permit?"
-                    }
-                    data={
-                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                    }
+                    Title={item.faqlitle}
+                    des={item.faqdesc}
                   />
                 </div>
               ))}
@@ -42,7 +51,7 @@ const ProductDetails = (props: Props) => {
             </div>
           </div>
         </div>
-      </Layout>
+      
     </ProductStyle>
   );
 };

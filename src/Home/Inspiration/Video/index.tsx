@@ -8,7 +8,6 @@ interface Props {
 }
 
 const VideoIndex = (props: Props) => {
-  console.log("video",props.clientVideo)
   return (
     <>
     <div className="row">

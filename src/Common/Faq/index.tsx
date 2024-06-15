@@ -4,7 +4,7 @@ import Typography from "../Typography";
 interface Props {
   Title?: string;
   according?: boolean;
-  data?: any;
+  des?: any;
 }
 
 const Faq = (props: Props) => {
@@ -36,6 +36,7 @@ const Faq = (props: Props) => {
           _color="#2D3840"
           _fontSize={["16px", "16px"]}
           _fontWeight={[600, 600]}
+          _lineHeight={["20px","30px"]}
           // _letterSpacing={["0.06em", "0.12em"]}
           className="accordingTitle faqTitle"
         >
@@ -48,10 +49,11 @@ const Faq = (props: Props) => {
               _color="#2D3840"
               _fontSize={["14px", "14px"]}
               _fontWeight={[400, 400]}
+              _lineHeight={["20px","28px"]}
               // _letterSpacing={["0.06em", "0.12em"]}
               className="faqP"
             >
-              {props.data}
+              {props.des}
             </Typography>
           </div>
         )}

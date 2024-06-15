@@ -4,10 +4,21 @@ import { ImButton } from "../Button";
 import MeneStyle from "./MenuStyle";
 import Images from "../Images";
 import styled from "styled-components";
+import Submenu from "./submenu";
 
-interface Props {}
+interface Props {
+  category?: any;
+}
 
 const Menu = (props: Props) => {
+  const showMega = [
+    "showMega1", "showMega2", "showMega3", "showMega4", "showMega5",
+    "showMega6", "showMega7", "showMega8", "showMega9", "showMega10"
+  ];
+
+  // Ensure the response array is safely reversed
+  const reversedCategories = props.category?.response.slice().reverse() || [];
+
   return (
     <>
       <MeneStyle>
@@ -79,149 +90,21 @@ const Menu = (props: Props) => {
                 <label htmlFor="close-btn" className="btn close-btn">
                   dd
                 </label>
-                <li>
-                  <a href="#" className="desktop-item immigration">
-                    Immigration
-                  </a>
-                  <input type="radio" name="menubtn" id="showMega" />
-                  <label htmlFor="showMega" className="mobile-item">
-                    Mega Menu
-                  </label>
-                  <div className="mega-box">
-                    <div className="content">
-                      <div className="col-md-3">
-                        <p>ddhs</p>
-                      </div>
-                      <div className="col-md-3">
-                        <header>Design Services</header>
-                        <ul className="mega-links">
-                          <li>
-                            <a href="#">Graphics</a>
-                          </li>
-                          <li>
-                            <a href="#">Vectors</a>
-                          </li>
-                          <li>
-                            <a href="#">Business cards</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom logo</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="col-md-3">
-                        <header>Email Services</header>
-                        <ul className="mega-links">
-                          <li>
-                            <a href="#">Personal Email</a>
-                          </li>
-                          <li>
-                            <a href="#">Business Email</a>
-                          </li>
-                          <li>
-                            <a href="#">Mobile Email</a>
-                          </li>
-                          <li>
-                            <a href="#">Web Marketing</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="col-md-3">
-                        <header>Security services</header>
-                        <ul className="mega-links">
-                          <li>
-                            <a href="#">Site Seal</a>
-                          </li>
-                          <li>
-                            <a href="#">VPS Hosting</a>
-                          </li>
-                          <li>
-                            <a href="#">Privacy Seal</a>
-                          </li>
-                          <li>
-                            <a href="#">Website design</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li className="business">
-                  <a href="#" className="desktop-item">
-                    Business
-                  </a>
-                  <input type="radio" name="menubtn" id="showMega2" />
-                  <label htmlFor="showMega2" className="mobile-item">
-                    Mega Menu2
-                  </label>
-                  <div className="mega-box">
-                    <div className="content">
-                      <div className="col-md-3">
-                        <p>ddhs</p>
-                      </div>
-                      <div className="col-md-3">
-                        <header>Design Services</header>
-                        <ul className="mega-links">
-                          <li>
-                            <a href="#">Graphics</a>
-                          </li>
-                          <li>
-                            <a href="#">Vectors</a>
-                          </li>
-                          <li>
-                            <a href="#">Business cards</a>
-                          </li>
-                          <li>
-                            <a href="#">Custom logo</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="col-md-3">
-                        <header>Email Services</header>
-                        <ul className="mega-links">
-                          <li>
-                            <a href="#">Personal Email</a>
-                          </li>
-                          <li>
-                            <a href="#">Business Email</a>
-                          </li>
-                          <li>
-                            <a href="#">Mobile Email</a>
-                          </li>
-                          <li>
-                            <a href="#">Web Marketing</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="col-md-3">
-                        <header>Security services</header>
-                        <ul className="mega-links">
-                          <li>
-                            <a href="#">Site Seal</a>
-                          </li>
-                          <li>
-                            <a href="#">VPS Hosting</a>
-                          </li>
-                          <li>
-                            <a href="#">Privacy Seal</a>
-                          </li>
-                          <li>
-                            <a href="#">Website design</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <a href="#">work</a>
-                </li>
-                <li>
-                  <a href="#">Visit</a>
-                </li>
-                <li>
-                  <a href="#">study</a>
-                </li>
+                {reversedCategories.map((item: any, index: any) => (
+                  <li key={index}>
+                    {item.navi === "true" &&
+                    <>
+                    <a href="#" className="desktop-item immigration">
+                      {item.category}
+                    </a>
+                    <input type="radio" name="menubtn" id={`${showMega[index]}`} />
+                    <label htmlFor={`${showMega[index]}`} className="mobile-item">
+                      {item.category}
+                    </label>
+                    <Submenu id={item._id} />
+                    </>}
+                  </li>
+                ))}
                 <li>
                   <ImButton
                     as={"button"}

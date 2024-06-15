@@ -53,7 +53,7 @@ const BlogList = (props: Props) => {
                   <div className="col-md-6" key={index}>
                     <div className="blogList">
                       <Link
-                        href={`blog/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item._id}`}
+                        href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <Images
                           src={`${process.env.NEXT_PUBLIC_Images_URL}${item.image}`}
@@ -63,7 +63,7 @@ const BlogList = (props: Props) => {
                         ></Images>
                       </Link>
                       <Link
-                        href={`blog/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item._id}`}
+                        href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <Typography
                           as="h4"
