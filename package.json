@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next -p 3300",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start --port 3001",
     "lint": "next lint",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
