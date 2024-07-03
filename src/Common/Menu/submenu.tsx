@@ -53,7 +53,7 @@ const Submenu = (props: Props) => {
             <div className="col-md-3">
             {props.index === 0 && <Typography
               as="h2"
-              _color="#28003B"
+              _color="#000"
               _fontSize={["24px", "32px"]}
               _fontWeight={[500, 500]}
               _lineHeight={["36px", "40px"]}
@@ -63,7 +63,7 @@ const Submenu = (props: Props) => {
             </Typography>}
             {props.index === 1 && <Typography
               as="h2"
-              _color="#28003B"
+              _color="#000"
               _fontSize={["24px", "32px"]}
               _fontWeight={[400, 400]}
               _lineHeight={["36px", "40px"]}
@@ -73,7 +73,7 @@ const Submenu = (props: Props) => {
             </Typography>}
             { 1 < props.index && <Typography
               as="h2"
-              _color="#28003B"
+              _color="#000"
               _fontSize={["24px", "32px"]}
               _fontWeight={[500, 500]}
               _lineHeight={["36px", "40px"]}
@@ -91,13 +91,13 @@ const Submenu = (props: Props) => {
             <div className="col-md-3">
               <ul className="menuLink">
                 <li>
-                  <a href="javascript:void(0)"><img src="/images/icon/message-square.svg" alt="" width="24px" height="24px"/> Customer Stories</a>
+                  <a href="testimonials"><img src="/images/icon/message-square.svg" alt="" width="24px" height="24px"/> Customer Stories</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)"><img src="/images/icon/notifications-alert-circle.svg" alt="" width="24px" height="24px"/> Why Trust Ellar</a>
+                  <a href="about-us"><img src="/images/icon/notifications-alert-circle.svg" alt="" width="24px" height="24px"/> Why Trust Ellar</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)"><img src="/images/icon/minus.svg" alt="" width="24px" height="24px"/> Let’s talk</a>
+                  <a href="contact-us"><img src="/images/icon/minus.svg" alt="" width="24px" height="24px"/> Let’s talk</a>
                 </li>
               </ul>
             </div>

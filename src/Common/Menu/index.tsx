@@ -80,7 +80,7 @@ const Menu = (props: Props) => {
           <div className="menuBar">
             <div className="wrapper">
               <div className="logo">
-                <a href="#">
+                <a href="https://elaarimmigration.in/">
                   <Images src={"/images/logo.svg"} alt={'logo'}></Images>
                 </a>
               </div>

@@ -73,7 +73,7 @@ const AboutIndex = (props: Props) => {
           </div>
         </div>
       </section>
-      {/* <Inspiration/>  */}
+      <Inspiration/> 
     </LayOut>
   );
 };

@@ -26,9 +26,9 @@ const ProductDetailsIndex = (props: Props) => {
         }
         const item = await res.json();
         const fetchedData = await item.response.find(
-          (item: any) => item._id === "666a7199a7a77353917fcaaa"
+          (item: any) => item._id === "664ce6c6aff639d654b18a13"
         );
-        // console.log("data",fetchedData)
+        console.log("data",fetchedData)
 
         setData(fetchedData);
       } catch (error) {
