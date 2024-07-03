@@ -60,7 +60,7 @@ const NewsList = (props: Props) => {
               </Typography>
             </div>
             <Link
-              href={`blog/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item._id}`}
+              href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <Images
                 src={`${process.env.NEXT_PUBLIC_Images_URL}${item.image}`}
