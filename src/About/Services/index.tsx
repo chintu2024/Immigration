@@ -118,7 +118,7 @@ export const ServicesStyle = styled.section`
         transform: translate(0px, -30%);
         top: 70%;
         color: #fff;
-        z-index: 1000000000;
+        z-index: 10;
         transition: all 1s ease-out;
       }
     }
