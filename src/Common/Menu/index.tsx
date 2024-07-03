@@ -91,17 +91,17 @@ const Menu = (props: Props) => {
                   dd
                 </label>
                 {reversedCategories.map((item: any, index: any) => (
-                  <li key={index}>
+                  <li key={index} className={`desktop-item ${showMega[index]}`}>
                     {item.navi === "true" &&
                     <>
-                    <a href="#" className="desktop-item immigration">
+                    <a href={`../${item.category}`} className="desktop-item">
                       {item.category}
                     </a>
                     <input type="radio" name="menubtn" id={`${showMega[index]}`} />
                     <label htmlFor={`${showMega[index]}`} className="mobile-item">
                       {item.category}
                     </label>
-                    <Submenu id={item._id} />
+                    <Submenu id={item._id} index={index}/>
                     </>}
                   </li>
                 ))}

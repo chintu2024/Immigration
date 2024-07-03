@@ -12,6 +12,7 @@ const ProductDetailsIndex = (props: Props) => {
   const [loading, setLoading] = useState(true);
   const urlParts = router.asPath.split("-");
   const text = urlParts.slice(1, -1).join(" ");
+  // const text2 = urlParts.slice(0, 1).join(" ");
   const basecategory = text.replace("/","")
   console.log("category", basecategory)
   useEffect(() => {

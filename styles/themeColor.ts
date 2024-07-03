@@ -11,6 +11,11 @@ const theme = {
     menubar: "#F44E1C",
     footerText: "#DCDBDB",
     btn: "#FB3D44",
+    back1:"#FF7C54",
+    back2:"#2BABE2",
+    back3:"#65C3A2",
+    back4:"#FEE300",
+    back5:"#304656",
     brand_primary: {
       main: "#ED1C24",
       50: "#FDE8E9",

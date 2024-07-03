@@ -7,7 +7,7 @@ interface Props {
   children?: ReactNode;
 }
 
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 1 day in milliseconds
+// const CACHE_DURATION = 24 * 60 * 60 * 1000; // 1 day in milliseconds
 
 const LayOut = (props: Props) => {
   const { children } = props;
@@ -15,16 +15,16 @@ const LayOut = (props: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const cachedData = localStorage.getItem('categoryData');
-      const cachedTime = localStorage.getItem('categoryDataTime');
+      // const cachedData = localStorage.getItem('categoryData');
+      // const cachedTime = localStorage.getItem('categoryDataTime');
       
-      if (cachedData && cachedTime) {
-        const age = Date.now() - parseInt(cachedTime);
-        if (age < CACHE_DURATION) {
-          setCategory(JSON.parse(cachedData));
-          return;
-        }
-      }
+      // if (cachedData && cachedTime) {
+      //   const age = Date.now() - parseInt(cachedTime);
+      //   if (age < CACHE_DURATION) {
+      //     setCategory(JSON.parse(cachedData));
+      //     return;
+      //   }
+      // }
 
       try {
         const res = await fetch(
@@ -34,8 +34,8 @@ const LayOut = (props: Props) => {
           throw new Error("Failed to fetch data");
         }
         const fetchedData = await res.json();
-        localStorage.setItem('categoryData', JSON.stringify(fetchedData));
-        localStorage.setItem('categoryDataTime', Date.now().toString());
+        // localStorage.setItem('categoryData', JSON.stringify(fetchedData));
+        // localStorage.setItem('categoryDataTime', Date.now().toString());
         setCategory(fetchedData);
       } catch (error) {
         console.error("Error fetching data:", error);
