@@ -64,10 +64,15 @@ export const ContactBannerStyle = styled.div`
     background: url(images/contact/textbg.svg) no-repeat;
     background-position: center;
     background-size: 100%;
+    /* background-color: #fff;
+    border-radius: 28px; */
+    position: relative;
   }
+  /* .bannerText:after{
+    content: "";
+  } */
   .bradCrum {
-    border-bottom: 1px solid #ffffff;
-    max-width: 200px;
+    text-decoration: underline;
     padding-top: 30px;
   }
   .bradCrum span {

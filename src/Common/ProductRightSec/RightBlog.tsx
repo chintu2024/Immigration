@@ -6,11 +6,19 @@ import Link from "next/link";
 interface Props {
   blog?: any;
 }
-
+export const formatDate = (timestamp: any) => {
+  const date = new Date(timestamp);
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+  return `${day}-${month}-${year}`;
+}
 const RightBlog = (props: Props) => {
   return (
     <>
-      {props.blog?.response.slice(0, 3).map((item: any, index: any) => (
+      {props.blog?.response.slice(0, 3).map((item: any, index: any) => {
+      const formattedDate = formatDate(item.added_on);
+      return(
         <div className="recentPost" key={index}>
           <Link
             href={`/blog/${item.slug  
@@ -37,10 +45,11 @@ const RightBlog = (props: Props) => {
             className="mb-2 calender"
           >
             <Calendar />
-            {item.added_on}
+            {formattedDate}
           </Typography>
         </div>
-      ))}
+      )
+    })}
     </>
   );
 };

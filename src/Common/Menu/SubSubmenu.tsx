@@ -25,7 +25,8 @@ const SubSubmenu = (props: Props) => {
         };
     
         fetchData();
-      }, [sub_category,subdata ]);
+      }, []);
+      [sub_category,subdata ]
   return (
     <>
     {sub_Category && sub_Category.response && sub_Category.response.length > 0 && <ul className="mega-links">
