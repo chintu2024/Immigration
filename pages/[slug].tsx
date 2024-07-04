@@ -47,7 +47,7 @@ const ProductDetailsIndex = (props: Props) => {
       ) : data ? (
         <ProductDetails data={data} />
       ) : (
-        <p>data has not loaded</p>
+        <p>404 error</p>
       )}
   </Layout>
   )

@@ -22,10 +22,10 @@ const Submenu = (props: Props) => {
   const subMenu: any = data;
   useEffect(() => {
     const fetchData = async () => {
-      if (data) {
-        // Data already loaded from localStorage
-        return;
-      }
+      // if (data) {
+      //   Data already loaded from localStorage
+      //   return;
+      // }
 
       try {
         const res = await fetch(
@@ -43,8 +43,8 @@ const Submenu = (props: Props) => {
     };
 
     fetchData();
-  }, [categoryId, data]);
-
+  }, []);
+  // [categoryId, data]
   return (
     <>
       {subMenu && subMenu.response && subMenu.response.length > 0 && (
