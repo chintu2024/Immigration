@@ -91,13 +91,13 @@ const Submenu = (props: Props) => {
             <div className="col-md-3">
               <ul className="menuLink">
                 <li>
-                  <a href="testimonials"><img src="/images/icon/message-square.svg" alt="" width="24px" height="24px"/> Customer Stories</a>
+                  <a href="/testimonials"><img src="/images/icon/message-square.svg" alt="" width="24px" height="24px"/> Customer Stories</a>
                 </li>
                 <li>
-                  <a href="about-us"><img src="/images/icon/notifications-alert-circle.svg" alt="" width="24px" height="24px"/> Why Trust Ellar</a>
+                  <a href="/about-us"><img src="/images/icon/notifications-alert-circle.svg" alt="" width="24px" height="24px"/> Why Trust Ellar</a>
                 </li>
                 <li>
-                  <a href="contact-us"><img src="/images/icon/minus.svg" alt="" width="24px" height="24px"/> Let’s talk</a>
+                  <a href="/contact-us"><img src="/images/icon/minus.svg" alt="" width="24px" height="24px"/> Let’s talk</a>
                 </li>
               </ul>
             </div>
