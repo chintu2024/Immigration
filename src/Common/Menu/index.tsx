@@ -97,7 +97,7 @@ const Menu = (props: Props) => {
                   <li key={index} className={`${showMega[index]}`} onMouseOver={() => Setmenutoggale(false)}>
                     {item.navi === "true" &&
                     <>
-                    <Link href={`../${item.category}`} className="desktop-item">
+                    <Link href={`../${item.category.toLowerCase().replace(/\s+/g, "-")}`} className="desktop-item">
                       {item.category}
                     </Link>
                     <input type="radio" ref={radioButtonRef} name="menubtn" id={`${showMega[index]}`} />

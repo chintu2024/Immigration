@@ -159,7 +159,6 @@ const MeneStyle = styled.section`
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     /* gap: 12px; */
     /* width: calc(100% - 40px); */
-    margin-top: 16px;
   }
   .nav-links >li {
     padding: 13px 0px;
