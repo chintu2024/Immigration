@@ -15,7 +15,7 @@ const LatestUpdateIndex = (props: Props) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `https://dashboard.elaarimmigration.in/api/blogs`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/blogs`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");

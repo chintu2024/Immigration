@@ -13,7 +13,6 @@ interface Props {
 const ProductRight = (props: Props) => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log("data", props.data)
   useEffect(() => {
     const fetchData = async () => {
       try {

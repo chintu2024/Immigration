@@ -10,11 +10,10 @@ const ProductDetailsIndex = (props: Props) => {
   const router = useRouter();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const urlParts = router.asPath.split("-");
-  const text = urlParts.slice(1, -1).join(" ");
-  // const text2 = urlParts.slice(0, 1).join(" ");
-  const basecategory = text.replace("/","")
-  console.log("category", basecategory)
+  const extracted = router.asPath.split("-").join(" ");
+  const slugurl = extracted.split("/")
+  const slug = slugurl.slice(1).join("")
+  console.log("slug",slug)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,11 +25,11 @@ const ProductDetailsIndex = (props: Props) => {
         }
         const item = await res.json();
         const fetchedData = await item.response.find(
-          (item: any) => item._id === "664ce6c6aff639d654b18a13"
+          (item: any) => item.name.toLowerCase() === slug
         );
-        console.log("data",fetchedData)
 
         setData(fetchedData);
+        console.log("data",item)
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -39,7 +38,7 @@ const ProductDetailsIndex = (props: Props) => {
     };
 
     fetchData();
-  }, [basecategory]);
+  }, [slug]);
   return (
     <Layout>
       {loading ? (

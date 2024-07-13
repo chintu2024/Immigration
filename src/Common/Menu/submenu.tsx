@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import SubSubmenu from './SubSubmenu';
 import Typography from '../Typography';
 import { menuData } from './menuData';
+import Link from 'next/link';
 
 interface Props {
   id?: any;
   index?:any;
+  setmenutoggale?:any;
+  menutoggale?:any;
 }
 
 const Submenu = (props: Props) => {
@@ -48,15 +51,15 @@ const Submenu = (props: Props) => {
   return (
     <>
       {subMenu && subMenu.response && subMenu.response.length > 0 && (
-        <div className="mega-box">
+        <div className={props.menutoggale === true ? "mega-box menuHide" : "mega-box"}>
           <div className={`content ${showMegaBack[props.index]}`} >
             <div className="col-md-3">
             {props.index === 0 && <Typography
               as="h2"
               _color="#000"
-              _fontSize={["24px", "32px"]}
+              _fontSize={["18px", "32px"]}
               _fontWeight={[500, 500]}
-              _lineHeight={["36px", "40px"]}
+              _lineHeight={["24px", "40px"]}
               className=""
             >
               Making immigration easier, step by step
@@ -64,9 +67,9 @@ const Submenu = (props: Props) => {
             {props.index === 1 && <Typography
               as="h2"
               _color="#000"
-              _fontSize={["24px", "32px"]}
+              _fontSize={["18px", "32px"]}
               _fontWeight={[400, 400]}
-              _lineHeight={["36px", "40px"]}
+              _lineHeight={["24px", "40px"]}
               className=""
             >
               Elevate Your Career with the Canadian Work Permit
@@ -74,9 +77,9 @@ const Submenu = (props: Props) => {
             { 1 < props.index && <Typography
               as="h2"
               _color="#000"
-              _fontSize={["24px", "32px"]}
+              _fontSize={["18px", "32px"]}
               _fontWeight={[500, 500]}
-              _lineHeight={["36px", "40px"]}
+              _lineHeight={["24px", "40px"]}
               className=""
             >
               Making immigration easier, step by step
@@ -85,19 +88,19 @@ const Submenu = (props: Props) => {
             {subMenu.response.slice(0, 2).reverse().map((item: any, index: any) => (
               <div className="col-md-3" key={index}>
                 <header>{item.sub_category}</header>
-                <SubSubmenu sub_category={item._id}/> 
+                <SubSubmenu sub_category={item._id} setmenutoggale={props.setmenutoggale}/> 
               </div>
             ))}
             <div className="col-md-3">
               <ul className="menuLink">
                 <li>
-                  <a href="/testimonials"><img src="/images/icon/message-square.svg" alt="" width="24px" height="24px"/> Customer Stories</a>
+                  <Link href="/testimonials"><img src="/images/icon/message-square.svg" alt="images" width="24px" height="24px"/> Customer Stories</Link>
                 </li>
                 <li>
-                  <a href="/about-us"><img src="/images/icon/notifications-alert-circle.svg" alt="" width="24px" height="24px"/> Why Trust Ellar</a>
+                  <Link href="/about-us"><img src="/images/icon/notifications-alert-circle.svg" alt="images" width="24px" height="24px"/> Why Trust Ellar</Link>
                 </li>
                 <li>
-                  <a href="/contact-us"><img src="/images/icon/minus.svg" alt="" width="24px" height="24px"/> Let’s talk</a>
+                  <Link href="/contact-us"><img src="/images/icon/minus.svg" alt="images" width="24px" height="24px"/> Let’s talk</Link>
                 </li>
               </ul>
             </div>

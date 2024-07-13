@@ -6,6 +6,7 @@ import VideoIndex from "./Video";
 
 interface Props {
   data?: any;
+  footerdata?: any;
 }
 
 const Inspiration = (props: Props) => {
@@ -83,7 +84,7 @@ const Inspiration = (props: Props) => {
               _lineHeight={["35px", "30px"]}
               className="maintitla"
             >
-              <div dangerouslySetInnerHTML={{ __html: props.data }} />
+              <div dangerouslySetInnerHTML={{ __html: props.footerdata }} />
             </Typography>
           </div>
           <div className="row">

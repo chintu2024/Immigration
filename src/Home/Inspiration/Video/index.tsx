@@ -11,7 +11,7 @@ const VideoIndex = (props: Props) => {
   return (
     <>
     <div className="row">
-    {props.clientVideo?.response.map((item:any, index:any) => (
+    {props.clientVideo?.response.slice(0,3).map((item:any, index:any) => (
       <div className="col-md-4" key={index}>
       <VideoStyle>
         <div className="videoSec">
