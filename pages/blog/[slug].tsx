@@ -26,7 +26,7 @@ const BlogDetails = (props: Props) => {
         }
         const item = await res.json();
         const fetchedData = await item.response.find(
-          (item: any) => item.slug === slug
+          (item: any) => item.slug.toLowerCase() === slug
         );
         console.log(fetchedData)
 

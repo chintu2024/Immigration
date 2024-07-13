@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ProductStyle from "./ProductStyle";
-import Layout from "src/Common/Layout";
 import ProductsText from "./ProductText";
-import LatestUpdateIndex from "src/Home/LatestUpdate";
 import Inspiration from "src/Home/Inspiration";
 import ProductRight from "../Common/ProductRightSec2";
 import Faq from "src/Common/Faq";
 import Typography from "src/Common/Typography";
+import Head from "next/head";
 
 interface Props {
   data?:any;
@@ -17,6 +16,13 @@ const ProductDetails = (props: Props) => {
   // console.log(props.data)
   return (
     <ProductStyle>
+      <Head>
+      {props.data.meta_title && <title>{props.data.meta_title}</title>}
+        {props.data.meta_desc && <meta name="description" content={props.data.meta_desc} />}
+        {props.data.meta_keyword && <meta name="keywords" content={props.data.meta_keyword} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.head_tag }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.body_tag }} />
+      </Head>
         <div className="container mt-4">
           <div className="row">
             <div className="col-md-9 protMr">
@@ -47,7 +53,7 @@ const ProductDetails = (props: Props) => {
               ))}
             </div>
             <div className="col-md-12">
-              <Inspiration />
+              <Inspiration footerdata={props.data.footer_desc}/>
             </div>
           </div>
         </div>

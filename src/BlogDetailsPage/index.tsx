@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useState } from "react";
 import Images from "src/Common/Images";
 import LayOut from "src/Common/Layout";
@@ -20,6 +21,13 @@ const BlogDetailsPage = (props: Props) => {
   const formattedDate = formatDate(props.data.added_on);
   return (
     <BlogDetailsPageStyle>
+      <Head>
+      {props.data.title && <title>{props.data.title}</title>}
+        {/* {props.data.meta_desc && <meta name="description" content={props.data.meta_desc} />}
+        {props.data.meta_keyword && <meta name="keywords" content={props.data.meta_keyword} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.head_tag }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.body_tag }} /> */}
+      </Head>
       <div className="blogbanner">
         <Images
           src={`${process.env.NEXT_PUBLIC_Images_URL}${props.data.image}`}

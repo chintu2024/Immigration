@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import theme from "styles/themeColor";
 import { ImButton } from "../Button";
 import MeneStyle from "./MenuStyle";
 import Images from "../Images";
 import styled from "styled-components";
 import Submenu from "./submenu";
+import Link from "next/link";
 
 interface Props {
   category?: any;
@@ -15,10 +16,11 @@ const Menu = (props: Props) => {
     "showMega1", "showMega2", "showMega3", "showMega4", "showMega5",
     "showMega6", "showMega7", "showMega8", "showMega9", "showMega10"
   ];
-
+  const [menutoggale , Setmenutoggale] = useState(false)
   // Ensure the response array is safely reversed
   const reversedCategories = props.category?.response.slice().reverse() || [];
-
+  const radioButtonRef = useRef(null);
+  const radioButton = radioButtonRef.current;
   return (
     <>
       <MeneStyle>
@@ -43,7 +45,7 @@ const Menu = (props: Props) => {
                       </div>
                     </li>
                     <li>
-                      <div className="call">
+                      <div className="call email">
                         <Images
                           src={"/images/messaging-mail.svg"}
                           alt={"email"}
@@ -80,28 +82,29 @@ const Menu = (props: Props) => {
           <div className="menuBar">
             <div className="wrapper">
               <div className="logo">
-                <a href="https://elaarimmigration.in/">
+                <Link href="https://elaarimmigration.in/">
                   <Images src={"/images/logo.svg"} alt={'logo'}></Images>
-                </a>
+                </Link>
               </div>
               <input type="radio" name="slider" id="menu-btn" />
               <input type="radio" name="slider" id="close-btn" />
-              <ul className="nav-links">
+              <div className={menutoggale === true ? "nav-links menuslideOff" : "nav-links"}>
+              <ul className="nav-ul ">
                 <label htmlFor="close-btn" className="btn close-btn">
                   dd
                 </label>
                 {reversedCategories.map((item: any, index: any) => (
-                  <li key={index} className={`desktop-item ${showMega[index]}`}>
+                  <li key={index} className={`${showMega[index]}`} onMouseOver={() => Setmenutoggale(false)}>
                     {item.navi === "true" &&
                     <>
-                    <a href={`../${item.category}`} className="desktop-item">
+                    <Link href={`../${item.category}`} className="desktop-item">
                       {item.category}
-                    </a>
-                    <input type="radio" name="menubtn" id={`${showMega[index]}`} />
+                    </Link>
+                    <input type="radio" ref={radioButtonRef} name="menubtn" id={`${showMega[index]}`} />
                     <label htmlFor={`${showMega[index]}`} className="mobile-item">
                       {item.category}
                     </label>
-                    <Submenu id={item._id} index={index}/>
+                    <Submenu id={item._id} index={index} setmenutoggale={Setmenutoggale} menutoggale={menutoggale}/>
                     </>}
                   </li>
                 ))}
@@ -118,7 +121,8 @@ const Menu = (props: Props) => {
                   </ImButton>
                 </li>
               </ul>
-              <label htmlFor="menu-btn" className="btn menu-btn">
+              </div>
+              <label htmlFor="menu-btn" className="btn menu-btn" onClick={() => Setmenutoggale(false)}>
                 dgjfgdjg
               </label>
             </div>

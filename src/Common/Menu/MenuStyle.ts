@@ -144,6 +144,10 @@ const MeneStyle = styled.section`
     visibility: hidden;
     z-index: 10000000;
   }
+  .menuHide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
 
   .mega-box .content {
     background: #f44e1c;
@@ -202,7 +206,7 @@ const MeneStyle = styled.section`
   }
   .content .col-md-3:nth-child(2) header::before{
     content: "";
-    background: url(images/icon/eos-icons_service-instance-outlined.svg) no-repeat;
+    background: url(/images/icon/eos-icons_service-instance-outlined.svg) no-repeat;
     position: absolute;
     width: 24px;
     height: 24px;
@@ -211,7 +215,7 @@ const MeneStyle = styled.section`
   }
   .content .col-md-3:nth-child(3) header::before{
     content: "";
-    background: url(images/icon/files-file-text.svg) no-repeat;
+    background: url(/images/icon/files-file-text.svg) no-repeat;
     position: absolute;
     width: 24px;
     height: 24px;
@@ -220,7 +224,7 @@ const MeneStyle = styled.section`
   }
   .content .col-md-3 header::after{
     content: "";
-    background: url(images/icon/arrow.svg) no-repeat;
+    background: url(/images/icon/arrow.svg) no-repeat;
     position: absolute;
     width: 28px;
     height: 28px;
@@ -243,7 +247,7 @@ const MeneStyle = styled.section`
     text-decoration: underline;
   }
   .mega-links li::before{
-    background: url(images/icon/small-arrow.svg) no-repeat;
+    background: url(/images/icon/small-arrow.svg) no-repeat;
     position: absolute;
     width: 16px;
     height: 16px;
@@ -283,7 +287,7 @@ const MeneStyle = styled.section`
   }
   .menuLink li::after{
     content: "";
-    background: url(images/icon/arrow.svg) no-repeat;
+    background: url(/images/icon/arrow.svg) no-repeat;
     position: absolute;
     width: 24px;
     height: 24px;
@@ -296,9 +300,32 @@ const MeneStyle = styled.section`
     gap: 10px;
     padding: 0px 0px !important;
   }
+  .nav-links .nav-ul{
+    display: flex;
+  }
   @media screen and (max-width: 970px) {
     .wrapper .btn {
       display: block;
+    }
+    .menuHide {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+    .contactDetails ul .call.email{
+      display: none;
+    }
+    .nav-links .nav-ul{
+    display: block;
+    padding-left: 0px;
+    overflow: scroll;
+    height: calc(100vh - 390px);
+  }
+  .nav-links .nav-ul::-webkit-scrollbar{
+    background-color: #fff;
+    width: 11px;
+  }
+    .mega-box{
+      padding: 0px !important;
     }
     .wrapper .nav-links {
       position: fixed;
@@ -328,19 +355,22 @@ const MeneStyle = styled.section`
     #menu-btn:checked ~ .nav-links {
       left: 0%;
     }
-    #menu-btn:checked ~ .btn.menu-btn {
+    /* #menu-btn:checked ~ .btn.menu-btn {
       display: none;
     }
     #close-btn:checked ~ .btn.menu-btn {
       display: block;
-    }
-    .nav-links li {
-      margin: 15px 10px;
+    } */
+      .btn.menu-btn{color:#000;}
+    .nav-links >li {
+      margin: 0px 3px;
+      padding: 0px 0px;
     }
     .nav-links li a {
       padding: 0 20px;
-      display: block;
-      font-size: 20px;
+      display: flex;
+      font-size: 14px !important;
+      line-height: 34px;
     }
     .nav-links .drop-menu {
       position: static;
@@ -372,16 +402,14 @@ const MeneStyle = styled.section`
     }
     .nav-links .mobile-item {
       display: block;
-      color: #f2f2f2;
-      font-size: 20px;
-      font-weight: 500;
-      padding-left: 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    .nav-links .mobile-item:hover {
-      background: #3a3b3c;
+        color: #f2f2f2;
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 4px;
+        cursor: pointer;
+        border-radius: 5px;
+        line-height: 40px;
+      /* transition: all 0.3s ease; */
     }
     .drop-menu li {
       margin: 0;
@@ -398,13 +426,14 @@ const MeneStyle = styled.section`
       padding: 0 20px;
       max-height: 0px;
       overflow: hidden;
-      transition: all 0.3s ease;
+      /* transition: all 0.3s ease; */
       z-index: 10000000;
     }
     .mega-box .content {
       box-shadow: none;
       flex-direction: column;
-      padding: 20px 20px 0 20px;
+      padding: 6px 11px 0 0px;
+      margin-top: 0px;
     }
     .mega-box .content .col-md-3 {
       width: 100%;
@@ -423,11 +452,14 @@ const MeneStyle = styled.section`
       margin: 0;
     }
     .content .col-md-3 header {
-      font-size: 19px;
+      font-size: 16px;
     }
   }
   .menuBar input {
     display: none;
+  }
+  #menu-btn:checked ~ .nav-links.menuslideOff{
+    left: -100%;
   }
 `;
 
