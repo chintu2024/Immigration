@@ -14,9 +14,9 @@ interface Props {
 const Home = (props: Props) => {
   return (
     <StyleHome>
-      <Banner />
+      <Banner banner={props.data.response.homebanner}/>
       <ImmigrationIndex data={props.data} />
-      <MainAbout />
+      <MainAbout homepagecard={props.data.response.homepagecard}/>
       <CheckEligibilityIndex />
       <ProcessIndex />
       <LatestUpdateIndex />

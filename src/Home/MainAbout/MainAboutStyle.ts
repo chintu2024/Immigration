@@ -108,6 +108,11 @@ const MainAboutStyle = styled.section`
           color: ${theme.colors.white};
           font-size: 18px;
           letter-spacing: 1px;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          white-space: normal;
+          overflow: hidden;
           :hover {
             opacity: 0.8;
           }

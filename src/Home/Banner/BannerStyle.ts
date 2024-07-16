@@ -31,7 +31,7 @@ const BannerStyle = styled.div`
       :hover {
         background-color: #242424;
       }
-      a {
+      p {
         color: #fff;
         display: flex;
         text-align: center;

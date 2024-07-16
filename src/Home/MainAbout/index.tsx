@@ -3,16 +3,20 @@ import MainAboutStyle from "./MainAboutStyle";
 import Typography from "src/Common/Typography";
 import Images from "src/Common/Images";
 import { Controller, Scene } from "react-scrollmagic-r18";
+import Link from "next/link";
 
-interface Props {}
+interface Props {
+  homepagecard?:any;
+}
 
 const MainAbout = (props: Props) => {
   const colors = ["color1", "color2", "color3", "color4", "color5"];
+  console.log("home page data", props.homepagecard)
   return (
     <MainAboutStyle>
       <div className="container">
         <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-          {[...Array(5)].map((item, index) => (
+          {props.homepagecard.map((item:any, index:any) => (
             <Scene classToggle="scroll2" pin key={index}>
               <div>
                 <div className="maindivtext"></div>
@@ -44,7 +48,7 @@ const MainAbout = (props: Props) => {
                         _lineHeight={["40px", "52px"]}
                         className="mb-4"
                       >
-                        Making immigration easier, step by step
+                        {item.title1}
                       </Typography>
                       <Typography
                         as="p"
@@ -54,10 +58,7 @@ const MainAbout = (props: Props) => {
                         _lineHeight={["14px", "32px"]}
                         className="mb-4"
                       >
-                        Explore more than 100 immigration possibilities to
-                        Canada for skilled workers, international students, and
-                        entrepreneurs. Consider relocating with your loved ones
-                        to Canada in the year 2024.
+                        {item.description}
                       </Typography>
                     </div>
                     <div className="col-md-5 offset-md-1">
@@ -66,24 +67,39 @@ const MainAbout = (props: Props) => {
                         _color="#fff"
                         _fontSize={["20px", "32px"]}
                         _fontWeight={[400, 400]}
-                        _lineHeight={["14px", "35px"]}
+                        _lineHeight={["14px", "40px"]}
                         className="mb-4"
                       >
-                        Explore your best option to immigration in Canada.
+                       {item.title2}
                       </Typography>
                       <div className="linkTab">
                         <ul>
-                          {[...Array(4)].map((item, index) => (
-                            <li key={index}>
-                              <a href="javascript:viod(0)">
-                                High-skilled workers Visa
-                              </a>
-                            </li>
-                          ))}
+                            {item.homecat1text &&<li>
+                              <Link href={item.homecat1url}>
+                                {item.homecat1text}
+                              </Link>
+                            </li>}
+                            {item.homecat2text &&<li>
+                              <Link href={item.homecat2url}>
+                                {item.homecat2text}
+                              </Link>
+                            </li>}
+                            {item.homecat3text && <li>
+                              <Link href={item.homecat3url}>
+                                {item.homecat3text}
+                              </Link>
+                            </li>}
+                            {item.homecat4text && <li>
+                              <Link href={item.homecat4url}>
+                                {item.homecat4text}
+                              </Link>
+                            </li>}
                         </ul>
                       </div>
                       <div className="AppyImmigration">
-                        <a href="javascript:viod(0)">Apply for immigration</a>
+                        <Link href="/contact">
+                        Apply for immigration
+                        </Link>
                       </div>
                     </div>
                   </div>
