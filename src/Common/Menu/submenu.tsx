@@ -54,7 +54,7 @@ const Submenu = (props: Props) => {
         <div className={props.menutoggale === true ? "mega-box menuHide" : "mega-box"}>
           <div className={`content ${showMegaBack[props.index]}`} >
             <div className="col-md-3">
-            {props.index === 0 && <Typography
+            {props.index === 0 && <div className="menutitle"><Typography
               as="h2"
               _color="#000"
               _fontSize={["18px", "32px"]}
@@ -63,8 +63,8 @@ const Submenu = (props: Props) => {
               className=""
             >
               Making immigration easier, step by step
-            </Typography>}
-            {props.index === 1 && <Typography
+            </Typography></div>}
+            {props.index === 1 && <div className="menutitle"><Typography
               as="h2"
               _color="#000"
               _fontSize={["18px", "32px"]}
@@ -73,8 +73,8 @@ const Submenu = (props: Props) => {
               className=""
             >
               Elevate Your Career with the Canadian Work Permit
-            </Typography>}
-            { 1 < props.index && <Typography
+            </Typography></div>}
+            { 1 < props.index && <div className="menutitle"><Typography
               as="h2"
               _color="#000"
               _fontSize={["18px", "32px"]}
@@ -83,11 +83,12 @@ const Submenu = (props: Props) => {
               className=""
             >
               Making immigration easier, step by step
-            </Typography>}
+            </Typography></div>}
             </div>
             {subMenu.response.slice(0, 2).reverse().map((item: any, index: any) => (
               <div className="col-md-3" key={index}>
-                <header>{item.sub_category}</header>
+                <header onClick={() => props.setmenutoggale(true)}><Link href={item.sub_category.toLowerCase()
+              .replace(/\s+/g, "-")}>{item.sub_category}</Link></header>
                 <SubSubmenu sub_category={item._id} setmenutoggale={props.setmenutoggale}/> 
               </div>
             ))}
