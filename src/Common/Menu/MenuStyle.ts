@@ -43,13 +43,16 @@ const MeneStyle = styled.section`
       }
     }
   }
+  .menutitle{
+    max-width: 303px;
+  }
   .menuBar .logo img {
     height: 69px;
     margin-bottom: -18px;
   }
   .menuBar .wrapper {
     position: relative;
-    max-width: 1200px;
+    max-width: 100%;
     padding: 0px 30px;
     height: 70px;
     line-height: 45px;
@@ -79,15 +82,14 @@ const MeneStyle = styled.section`
     text-decoration: none;
     font-size: 18px;
     font-weight: 400;
-    padding: 24px 15px;
+    padding: 0px 15px;
     /* border-radius: 5px; */
     transition: all 0.3s ease;
   }
 
-  /* .nav-links >li >a:hover {
-    background: #f44e1c;
-    color: #000;
-  } */
+  .nav-links .nav-ul > li{
+   padding: 10px 0px;
+  }
   .nav-links .showMega1:hover {
     background-color: ${theme.colors.back1};
   }
@@ -136,9 +138,8 @@ const MeneStyle = styled.section`
   .mega-box {
     position: absolute;
     left: 0;
-    max-width: 1200px;
     width: 100%;
-    padding: 0 30px;
+    /* padding: 0 30px; */
     top: 85px;
     opacity: 0;
     visibility: hidden;
@@ -159,6 +160,7 @@ const MeneStyle = styled.section`
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     /* gap: 12px; */
     /* width: calc(100% - 40px); */
+    margin-top: 13px;
   }
   .nav-links >li {
     padding: 13px 0px;
@@ -212,6 +214,13 @@ const MeneStyle = styled.section`
     left: 0px;
     top: 9px;
   }
+  .content.back5 .col-md-3:nth-child(2) header::before,.content.back5 .col-md-3:nth-child(2) header::after,.content.back5 .col-md-3:nth-child(3) header::before,.content.back5 .col-md-3:nth-child(3) header::after, .back5 .menuLink li::after ,.back5 .menuLink li img {
+    filter: invert(1);
+  }
+  .back5 .menuLink li ,.content.back5 .col-md-3  header{
+    border-bottom: 1px solid #fff;
+  }
+  .content.back5 h2{color:#fff;}
   .content .col-md-3:nth-child(3) header::before{
     content: "";
     background: url(/images/icon/files-file-text.svg) no-repeat;
@@ -362,7 +371,6 @@ const MeneStyle = styled.section`
     } */
       .btn.menu-btn{color:#000;}
     .nav-links >li {
-      margin: 0px 3px;
       padding: 0px 0px;
     }
     .nav-links li a {
