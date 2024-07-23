@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import BlogDetailsPage from "src/BlogDetailsPage";
+import Error404 from "src/Common/404";
 import LayOut from "src/Common/Layout";
 import BlogDetailsPageSkeleton from "src/Common/SkeletonScreen/blogDetailsPageSkeleton";
 
@@ -48,7 +49,7 @@ const BlogDetails = (props: Props) => {
       ) : data ? (
         <BlogDetailsPage data={data} />
       ) : (
-        <p>error</p>
+        <Error404/>
       )}
     </LayOut>
   );

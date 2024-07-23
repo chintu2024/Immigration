@@ -83,27 +83,31 @@ const MeneStyle = styled.section`
     font-size: 18px;
     font-weight: 400;
     padding: 0px 15px;
+    display: block;
     /* border-radius: 5px; */
     transition: all 0.3s ease;
   }
-
   .nav-links .nav-ul > li{
-   padding: 10px 0px;
+   /* padding: 10px 0px; */
+   line-height: 68px;
+  }
+  .nav-links .nav-ul >li:hover {
+    background-color: #f44e1c;
   }
   .nav-links .showMega1:hover {
-    background-color: ${theme.colors.back1};
+    background-color: ${theme.colors.back1} !important;
   }
   .nav-links .showMega2:hover {
-    background-color: ${theme.colors.back2};
+    background-color: ${theme.colors.back2} !important;
   }
   .nav-links .showMega3:hover {
-    background-color: ${theme.colors.back3};
+    background-color: ${theme.colors.back3} !important;
   }
   .nav-links .showMega4:hover {
-    background-color: ${theme.colors.back4};
+    background-color: ${theme.colors.back4} !important;
   }
   .nav-links .showMega5:hover {
-    background-color: ${theme.colors.back5};
+    background-color: ${theme.colors.back5} !important;
   }
   .nav-links .showMega5:hover a{
     color: #fff;
@@ -144,6 +148,7 @@ const MeneStyle = styled.section`
     opacity: 0;
     visibility: hidden;
     z-index: 10000000;
+    margin-top: 13px;
   }
   .menuHide {
     opacity: 0 !important;
@@ -160,7 +165,7 @@ const MeneStyle = styled.section`
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     /* gap: 12px; */
     /* width: calc(100% - 40px); */
-    margin-top: 13px;
+    /* margin-top: 13px; */
   }
   .nav-links >li {
     padding: 13px 0px;
@@ -315,6 +320,7 @@ const MeneStyle = styled.section`
   }
   .nav-links .nav-ul{
     display: flex;
+    align-items: center;
   }
   @media screen and (max-width: 970px) {
     .wrapper .btn {

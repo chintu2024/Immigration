@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Error404 from "src/Common/404";
 import Layout from "src/Common/Layout";
 import BlogDetailsPageSkeleton from "src/Common/SkeletonScreen/blogDetailsPageSkeleton";
 import ProductDetails from "src/Product";
@@ -44,7 +45,7 @@ const ProductDetailsIndex = (props: Props) => {
       ) : data ? (
         <ProductDetails data={data} />
       ) : (
-        <p>404 error</p>
+        <Error404/>
         // <BlogDetailsPageSkeleton />
       )}
   </Layout>
