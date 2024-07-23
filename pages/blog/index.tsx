@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BlogList from "src/BlogList";
+import Error404 from "src/Common/404";
 import LayOut from "src/Common/Layout";
 import BlogPageSkeleton from "src/Common/SkeletonScreen/blogPageSkeleton";
 
@@ -37,7 +38,7 @@ const blogIndex = (props: Props) => {
       ) : blog ? (
         <BlogList blog={blog} />
       ) : (
-        <p>No data available</p>
+        <Error404/>
       )}
     </LayOut>
   );
