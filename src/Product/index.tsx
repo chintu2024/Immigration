@@ -25,20 +25,20 @@ const ProductDetails = (props: Props) => {
       </Head>
         <div className="container mt-4">
           <div className="row">
-            <div className="col-md-9 protMr">
+            <div className="col-md-8 protMr">
               <ProductsText data={props.data}/>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <ProductRight productRight={true} data={props.data}/>
             </div>
-            <div className="col-md-10 mt-5 mx-auto">
+            <div className="col-md-8 mt-5">
             <Typography
               as="p"
               _color="#000"
-              _fontSize={["12px", "22px"]}
+              _fontSize={["12px", "24px"]}
               _fontWeight={[600, 600]}
               _lineHeight={["20px", "25px"]}
-              className="text-center mb-4"
+              className="mb-4"
             >
              {props.data.faqheading}
             </Typography>

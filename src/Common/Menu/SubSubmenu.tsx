@@ -21,7 +21,6 @@ const SubSubmenu = (props: Props) => {
             }
             const fetchedData = await res.json();
             setSubdata(fetchedData);
-            // console.log("data",fetchedData)
           } catch (error) {
             console.error('Error fetching data:', error);
           }
@@ -33,7 +32,7 @@ const SubSubmenu = (props: Props) => {
   return (
     <>
     {sub_Category && sub_Category.response && sub_Category.response.length > 0 && <ul className="mega-links">
-    {sub_Category.response.slice(0, 5).reverse().map((item: any, index: any) => (
+    {sub_Category.response.slice(0, 4).reverse().map((item: any, index: any) => (
               <li key={index} onClick={() => props.setmenutoggale(true)}>
               <Link href={`../${item.sub_sub_category.toLowerCase()
               .replace(/\s+/g, "-")}`}>{item.sub_sub_category}</Link>

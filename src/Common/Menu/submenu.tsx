@@ -62,7 +62,7 @@ const Submenu = (props: Props) => {
               _lineHeight={["24px", "40px"]}
               className=""
             >
-              Making immigration easier, step by step
+              Making immigration <br/>easier, step by step
             </Typography></div>}
             {props.index === 1 && <div className="menutitle"><Typography
               as="h2"
@@ -82,17 +82,28 @@ const Submenu = (props: Props) => {
               _lineHeight={["24px", "40px"]}
               className=""
             >
-              Making immigration easier, step by step
+              Making immigration <br/>easier, step by step
             </Typography></div>}
+            <ul className="menuLink mt-4">
+                <li>
+                  <Link href="/testimonials"><img src="/images/icon/message-square.svg" alt="images" width="24px" height="24px"/> Customer Stories</Link>
+                </li>
+                <li>
+                  <Link href="/about-us"><img src="/images/icon/notifications-alert-circle.svg" alt="images" width="24px" height="24px"/> Why Trust Ellar</Link>
+                </li>
+                {/* <li>
+                  <Link href="/contact-us"><img src="/images/icon/minus.svg" alt="images" width="24px" height="24px"/> Let’s talk</Link>
+                </li> */}
+              </ul>
             </div>
-            {subMenu.response.slice(0, 2).reverse().map((item: any, index: any) => (
+            {subMenu.response.slice(0, 3).reverse().map((item: any, index: any) => (
               <div className="col-md-3" key={index}>
                 <header onClick={() => props.setmenutoggale(true)}><Link href={item.sub_category.toLowerCase()
               .replace(/\s+/g, "-")}>{item.sub_category}</Link></header>
                 <SubSubmenu sub_category={item._id} setmenutoggale={props.setmenutoggale}/> 
               </div>
             ))}
-            <div className="col-md-3">
+            {/* <div className="col-md-3">
               <ul className="menuLink">
                 <li>
                   <Link href="/testimonials"><img src="/images/icon/message-square.svg" alt="images" width="24px" height="24px"/> Customer Stories</Link>
@@ -104,7 +115,7 @@ const Submenu = (props: Props) => {
                   <Link href="/contact-us"><img src="/images/icon/minus.svg" alt="images" width="24px" height="24px"/> Let’s talk</Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

@@ -13,6 +13,7 @@ const LayOut = (props: Props) => {
   const { children } = props;
   const [category, setCategory] = useState(null);
 
+
   useEffect(() => {
     const fetchData = async () => {
       // const cachedData = localStorage.getItem('categoryData');

@@ -152,7 +152,7 @@ const MeneStyle = styled.section`
 
   .mega-box .content {
     background: #f44e1c;
-    padding: 60px 60px;
+    padding: 30px 40px;
     display: flex;
     flex-wrap: wrap;
     /* width: 100%; */
@@ -196,23 +196,28 @@ const MeneStyle = styled.section`
     font-size: 20px;
     font-weight: 500;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    /* -webkit-line-clamp: 1; */
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
     padding-left: 36px;
     padding-right: 20px;
-    border-bottom: 1px solid #000000
+    border-bottom: 1px solid #000000;
+    line-height: 26px;
   }
-  .content .col-md-3:nth-child(2) header::before{
+  .content .col-md-3 header a{
+    padding: 0px;
+    font-weight: 700;
+  }
+  .content .col-md-3 header::before{
     content: "";
     background: url(/images/icon/eos-icons_service-instance-outlined.svg) no-repeat;
     position: absolute;
     width: 24px;
     height: 24px;
     left: 0px;
-    top: 9px;
+    top: 0px;
   }
   .content.back5 .col-md-3:nth-child(2) header::before,.content.back5 .col-md-3:nth-child(2) header::after,.content.back5 .col-md-3:nth-child(3) header::before,.content.back5 .col-md-3:nth-child(3) header::after, .back5 .menuLink li::after ,.back5 .menuLink li img {
     filter: invert(1);
@@ -221,15 +226,15 @@ const MeneStyle = styled.section`
     border-bottom: 1px solid #fff;
   }
   .content.back5 h2{color:#fff;}
-  .content .col-md-3:nth-child(3) header::before{
+  /* .content .col-md-3:nth-child(3) header::before{
     content: "";
     background: url(/images/icon/files-file-text.svg) no-repeat;
     position: absolute;
     width: 24px;
     height: 24px;
     left: 0px;
-    top: 9px;
-  }
+    top: 0px;
+  } */
   .content .col-md-3 header::after{
     content: "";
     background: url(/images/icon/arrow.svg) no-repeat;
@@ -237,7 +242,7 @@ const MeneStyle = styled.section`
     width: 28px;
     height: 28px;
     right: 0px;
-    top: 17px;
+    top: 5px;
   }
   .content .col-md-3 .mega-links {
     /* margin-left: -40px; */
