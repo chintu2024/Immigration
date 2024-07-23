@@ -20,7 +20,8 @@ ul{
     }
 }
 .video iframe{
-    width: 100%;
+    width: 790px;
+    height: 390px;
 }
 .video{
     text-align: center;

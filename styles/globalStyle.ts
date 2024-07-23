@@ -166,7 +166,8 @@ button {
   .container-sm,
   .container-md,
   .container-lg {
-    max-width: 960px;
+    max-width: 100%;
+    padding: 0px 50px;
   }
 }
 
@@ -176,7 +177,8 @@ button {
   .container-md,
   .container-lg,
   .container-xl {
-    max-width: 1140px;
+    max-width: 100%;
+    padding: 0px 50px;
   }
 }
 
@@ -188,7 +190,8 @@ button {
   .container-xl,
   .container-xxl,
   .ti-container {
-    max-width: 1200px;
+    max-width: 100%;
+    padding: 0px 50px;
   }
 }
 .myDangerousHTML{

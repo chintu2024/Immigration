@@ -53,7 +53,7 @@ const index = (props: Props) => {
             </div>
           </div>
           <div className="col-md-6">
-            <Typography
+            {/* <Typography
               as="div"
               _color="#28003B"
               _fontSize={["20px", "40px"]}
@@ -64,7 +64,7 @@ const index = (props: Props) => {
               <div
                 dangerouslySetInnerHTML={{ __html: props.data.response.title }}
               />
-            </Typography>
+            </Typography> */}
             <Typography
               as="div"
               _color="#28003B"

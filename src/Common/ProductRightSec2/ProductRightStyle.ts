@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ProductRightStyle = styled.div`
+margin-left: 60px;
   .keyWord {
     border: 1px solid #ececec;
     padding: 25px;

@@ -26,16 +26,16 @@ const ProductsText = (props: Props) => {
       >
         </Typography> */}
       <div
-        className="mt-2 headingText"
+        className="headingText"
         dangerouslySetInnerHTML={{ __html: props.data.desc }}
       />
 
       {props.data.productdata.map((item: any, index: any) => (
         <div key={index}>
-           <div className="mt-2"
+           <div className="mt-5"
         dangerouslySetInnerHTML={{ __html: item.productDesc }}/>
         {item.productImage && 
-        <div className="text-center">
+        <div className="text-center mt-5">
           <Images
             src={`${process.env.NEXT_PUBLIC_Images_URL}${item.productImage}`}
             alt={"images"}
@@ -45,7 +45,7 @@ const ProductsText = (props: Props) => {
           </div>
           }
         
-        {item.prodcuctLink && <div className="mt-2 video"
+        {item.prodcuctLink && <div className="mt-5 video"
         dangerouslySetInnerHTML={{ __html: item.prodcuctLink}}/>
          }
         </div>

@@ -11,7 +11,6 @@ interface Props {
 
 const MainAbout = (props: Props) => {
   const colors = ["color1", "color2", "color3", "color4", "color5"];
-  console.log("home page data", props.homepagecard)
   return (
     <MainAboutStyle>
       <div className="container">

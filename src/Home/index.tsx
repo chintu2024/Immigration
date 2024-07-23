@@ -20,7 +20,7 @@ const Home = (props: Props) => {
       <CheckEligibilityIndex />
       <ProcessIndex />
       <LatestUpdateIndex />
-      <Inspiration footerdata={props.data.response.footer} />
+      <Inspiration footerdata={props.data.response.footer} hrcall={true}/>
     </StyleHome>
   );
 };

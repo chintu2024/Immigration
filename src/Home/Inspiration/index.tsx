@@ -7,6 +7,7 @@ import VideoIndex from "./Video";
 interface Props {
   data?: any;
   footerdata?: any;
+  hrcall? :boolean;
 }
 
 const Inspiration = (props: Props) => {
@@ -87,7 +88,7 @@ const Inspiration = (props: Props) => {
               <div dangerouslySetInnerHTML={{ __html: props.footerdata }} />
             </Typography>
           </div>
-          <div className="row">
+          {props.hrcall && <div className="row">
           <div className="col-md-5 mt-5">
             <Images
               src={"images/imm.png"}
@@ -142,7 +143,7 @@ const Inspiration = (props: Props) => {
               </a>
             </div>
           </div>
-        </div>
+        </div>}
         </div>
     </InspirationStyle>
   );

@@ -8,18 +8,18 @@ interface Props {
 
 const Count = (props: Props) => {
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => {
-        const newCount = prevCount + 1;
-        if (newCount >= props.countNumber) {
-          clearInterval(interval);
-        }
-        return newCount;
-      });
-    }, 0.2);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCount((prevCount) => {
+  //       const newCount = prevCount + 1;
+  //       if (newCount >= props.countNumber) {
+  //         clearInterval(interval);
+  //       }
+  //       return newCount;
+  //     });
+  //   }, 0.2);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <div className="numberSec">
       <Typography
@@ -30,7 +30,8 @@ const Count = (props: Props) => {
         _lineHeight={["30px", "32px"]}
         className="numberText mt-4"
       >
-        {count}
+        {/* {count} */}
+        {props.countNumber}
         <span>+</span>
       </Typography>
       <Typography

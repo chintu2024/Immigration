@@ -13,7 +13,6 @@ const ProductDetailsIndex = (props: Props) => {
   const extracted = router.asPath.split("-").join(" ");
   const slugurl = extracted.split("/")
   const slug = slugurl.slice(1).join("")
-  console.log("slug",slug)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,7 +28,6 @@ const ProductDetailsIndex = (props: Props) => {
         );
 
         setData(fetchedData);
-        console.log("data",item)
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -47,6 +45,7 @@ const ProductDetailsIndex = (props: Props) => {
         <ProductDetails data={data} />
       ) : (
         <p>404 error</p>
+        // <BlogDetailsPageSkeleton />
       )}
   </Layout>
   )
