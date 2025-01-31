@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ImmigrationStyle = styled.section`
-  margin: 60px 0px;
+  margin: 40px 0px;
   .ImmigrationDiv {
     background: linear-gradient(150.19deg, #fac3b9 6.88%, #c8bcda 100%);
     text-align: right;
@@ -9,16 +9,20 @@ const ImmigrationStyle = styled.section`
     position: relative;
     padding: 40px 0px;
   }
+  .ImmigrationDiv img{
+    margin-bottom: -43px;
+  }
   .imagesSection {
     padding-right: 30px;
   }
   .satisfied {
     position: absolute;
     bottom: 85px;
+    height: 103px;
     box-shadow: 0px 4px 22px 0px #b7b5b540;
     background-color: #fff;
     padding: 25px;
-    left: -64px;
+    left: -29px;
     border-radius: 18px;
     ul {
       padding-left: 0px;

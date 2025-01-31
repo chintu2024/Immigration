@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "styles/themeColor";
 
 const InspirationStyle = styled.section`
-  padding: 50px 0px;
+  padding: 40px 0px;
   background-color: #fff;
   position: relative;
   z-index: 1;
@@ -11,7 +11,7 @@ const InspirationStyle = styled.section`
     img {
       position: absolute;
       right: 213px;
-      bottom: 47px;
+      bottom: -6px;
     }
   }
   .title2 {
@@ -27,8 +27,8 @@ const InspirationStyle = styled.section`
     padding-left: 50px;
   }
   .maintitla {
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .immImages {
     border-radius: 0px 0px 60px 60px;

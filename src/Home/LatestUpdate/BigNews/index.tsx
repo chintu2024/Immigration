@@ -19,18 +19,18 @@ export const formatDate = (timestamp: any) => {
 const BigNews = (props: Props) => {
   return (
     <BigNewsStyle>
-      {props.blog?.response.slice(0, 1).map((item: any, index: any) => {
-        const formattedDate = formatDate(item.added_on);
+      {props.blog?.data.slice(0, 1).map((item: any, index: any) => {
+        const formattedDate = formatDate(item.created_at);
         return (
           <div className="ImagesSec" key={index}>
             <Link
               href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <Images
-                src={`${process.env.NEXT_PUBLIC_Images_URL}${item.image}`}
+                src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${item.image}`}
                 alt={"latest New"}
                 width={"100%"}
-                height={310}
+                height={400}
               />
             </Link>
             <Typography

@@ -33,7 +33,7 @@ const Footer = (props: Props) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/media`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/social-media`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");

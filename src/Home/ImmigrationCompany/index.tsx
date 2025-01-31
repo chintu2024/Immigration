@@ -1,7 +1,8 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Images from "src/Common/Images";
 import Typography from "src/Common/Typography";
-import { numberHome } from "../HomeData";
+import { homeimages, numberHome } from "../HomeData";
 import Count from "./count";
 import ImmigrationStyle from "./ImmigrationStyle";
 
@@ -29,10 +30,10 @@ const index = (props: Props) => {
                   120k+ Satisfied Client
                 </Typography>
                 <ul>
-                  {[...Array(2)].map((item, index) => (
+                  {homeimages.map((item, index) => (
                     <li key={index}>
                       <Images
-                        src={"images/ellipse310.png"}
+                        src={item.images}
                         alt={"images"}
                         width={48}
                         height={48}
@@ -41,30 +42,31 @@ const index = (props: Props) => {
                   ))}
 
                   <li>
+                    <Link href="/testimonials">
                     <Images
                       src={"images/Groupadd.png"}
                       alt={"images"}
                       width={48}
                       height={48}
                     ></Images>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="col-md-6">
-            {/* <Typography
-              as="div"
+          {props.data.data.PageContent.slice(0,1).map((item:any, index:any) => (
+          <div className="col-md-6" key={index}>
+            <Typography
+              as="h2"
               _color="#28003B"
               _fontSize={["20px", "40px"]}
               _fontWeight={[700, 700]}
               _lineHeight={["30px", "50px"]}
               className="text-uppercase"
             >
-              <div
-                dangerouslySetInnerHTML={{ __html: props.data.response.title }}
-              />
-            </Typography> */}
+              {item.product_title}
+            </Typography>
             <Typography
               as="div"
               _color="#28003B"
@@ -74,7 +76,7 @@ const index = (props: Props) => {
               className="mt-3"
             >
               <div
-                dangerouslySetInnerHTML={{ __html: props.data.response.desc }}
+                dangerouslySetInnerHTML={{ __html: item.description }}
               />
               {/* {props.data.response.desc} */}
             </Typography>
@@ -86,12 +88,13 @@ const index = (props: Props) => {
               ))}
             </div>
             <div className="seeBtn">
-              <a href="javascript:viod(0)">
+              <a href={item.url}>
                 See what you get with Elaar
                 <img src="images/Arrows-arrow-up-down.svg" alt="images" />
               </a>
             </div>
           </div>
+          ))}
         </div>
       </div>
     </ImmigrationStyle>

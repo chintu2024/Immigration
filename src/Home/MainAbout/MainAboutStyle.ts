@@ -18,37 +18,28 @@ const MainAboutStyle = styled.section`
       transition: all 1s ease-in-out;
     }
     .color1 {
-      background-color: #ff7c54;
+      background-color: ${theme.colors.back1};
     }
     .color2 {
-      background-color: #2babe2;
+      background-color: ${theme.colors.back2};
     }
     .color3 {
-      background-color: #65c3a2;
+      background-color: ${theme.colors.back3};
     }
     .color4 {
-      background-color: #fee300;
-      p {
-        color: #000 !important;
-      }
-      h3 {
-        color: #000 !important;
-      }
-      a {
-        color: #000 !important;
-      }
-      li {
-        border-bottom: 1px solid #000;
-        ::before {
-          filter: invert(1);
-        }
-      }
-      .AppyImmigration a {
-        border: 1px solid #000;
-      }
+      background-color: ${theme.colors.back4};
     }
     .color5 {
-      background-color: #304656;
+      background-color: ${theme.colors.back5};
+    }
+    .color6 {
+      background-color: ${theme.colors.back6};
+    }
+    .color7 {
+      background-color: ${theme.colors.back7};
+    }
+    .color8 {
+      background-color: ${theme.colors.back8};
     }
     :nth-child(1) .scroll2 .aboutFirst {
       margin: 0px 25px !important;
@@ -64,7 +55,16 @@ const MainAboutStyle = styled.section`
       margin: 30px 10px !important;
     }
     :nth-child(5) .scroll2 .aboutFirst {
-      margin: 40px 0px !important;
+      margin: 40px 5px !important;
+    }
+    :nth-child(6) .scroll2 .aboutFirst {
+      margin: 50px 0px !important;
+    }
+    :nth-child(7) .scroll2 .aboutFirst {
+      margin: 60px 0px !important;
+    }
+    :nth-child(8) .scroll2 .aboutFirst {
+      margin: 70px 0px !important;
     }
     .InfoSection_shadow {
       position: absolute;
@@ -95,7 +95,7 @@ const MainAboutStyle = styled.section`
         margin-bottom: 15px;
         ::before {
           content: "";
-          background-image: url(images/mainAboutArrow.svg);
+          background-image: url(/images/mainAboutArrow.svg);
           background-repeat: no-repeat;
           width: 40px;
           position: absolute;

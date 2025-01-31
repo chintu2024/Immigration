@@ -5,17 +5,37 @@ import Images from "src/Common/Images";
 import { Controller, Scene } from "react-scrollmagic-r18";
 import Link from "next/link";
 
-interface Props {
-  homepagecard?:any;
-}
-
+interface Props {}
 const MainAbout = (props: Props) => {
-  const colors = ["color1", "color2", "color3", "color4", "color5"];
+  const colors = ["color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8"];
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const Carddata: any = data;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/home-page-card`
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const fetchedData = await res.json();
+        setData(fetchedData);
+        console.log("homecard", data)
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or failure
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <MainAboutStyle>
       <div className="container">
         <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-          {props.homepagecard.map((item:any, index:any) => (
+          {Carddata?.data.slice(0, 8).map((item: any, index: any) => (
             <Scene classToggle="scroll2" pin key={index}>
               <div>
                 <div className="maindivtext"></div>
@@ -32,12 +52,12 @@ const MainAbout = (props: Props) => {
                         className="mainTitle text-uppercase mb-4"
                       >
                         <Images
-                          src={"images/bannerColor.svg"}
+                          src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${item.main_category.image}`}
                           alt={"images"}
                           width={77}
                           height={27}
                         ></Images>
-                        IMMIGRATION
+                        {item.category_id}
                       </Typography>
                       <Typography
                         as="p"
@@ -47,8 +67,9 @@ const MainAbout = (props: Props) => {
                         _lineHeight={["40px", "52px"]}
                         className="mb-4"
                       >
-                        {item.title1}
+                        {item.first_title}
                       </Typography>
+
                       <Typography
                         as="p"
                         _color="#fff"
@@ -57,7 +78,9 @@ const MainAbout = (props: Props) => {
                         _lineHeight={["14px", "32px"]}
                         className="mb-4"
                       >
-                        {item.description}
+                        <div
+                          dangerouslySetInnerHTML={{ __html: item.content }}
+                        />
                       </Typography>
                     </div>
                     <div className="col-md-5 offset-md-1">
@@ -69,36 +92,34 @@ const MainAbout = (props: Props) => {
                         _lineHeight={["14px", "40px"]}
                         className="mb-4"
                       >
-                       {item.title2}
+                        {item.second_title}
                       </Typography>
                       <div className="linkTab">
                         <ul>
-                            {item.homecat1text &&<li>
-                              <Link href={item.homecat1url}>
-                                {item.homecat1text}
-                              </Link>
-                            </li>}
-                            {item.homecat2text &&<li>
-                              <Link href={item.homecat2url}>
-                                {item.homecat2text}
-                              </Link>
-                            </li>}
-                            {item.homecat3text && <li>
-                              <Link href={item.homecat3url}>
-                                {item.homecat3text}
-                              </Link>
-                            </li>}
-                            {item.homecat4text && <li>
-                              <Link href={item.homecat4url}>
-                                {item.homecat4text}
-                              </Link>
-                            </li>}
+                          {item.custom_name1 && (
+                            <li>
+                             <Link href={item.url1 || "javoscript:void(0)"}>{item.custom_name1}</Link>
+                            </li>
+                          )}
+                          {item.custom_name2 && (
+                            <li>
+                              <Link href={item.url2 || "javoscript:void(0)"}>{item.custom_name2}</Link>
+                            </li>
+                          )}
+                          {item.custom_name3 && (
+                            <li>
+                              <Link href={item.url3 || "javoscript:void(0)"}>{item.custom_name3}</Link>
+                            </li>
+                          )}
+                          {item.custom_name4 && (
+                            <li>
+                              <Link href={item.url4 || "javoscript:void(0)"}>{item.custom_name4}</Link>
+                            </li>
+                          )}
                         </ul>
                       </div>
                       <div className="AppyImmigration">
-                        <Link href="/contact">
-                        Apply for immigration
-                        </Link>
+                        <Link href="/contact">{item.name}</Link>
                       </div>
                     </div>
                   </div>

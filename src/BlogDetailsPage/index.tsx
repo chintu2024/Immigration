@@ -18,19 +18,19 @@ export const formatDate = (timestamp: any) => {
   return `${day}-${month}-${year}`;
 }
 const BlogDetailsPage = (props: Props) => {
-  const formattedDate = formatDate(props.data.added_on);
+  const formattedDate = formatDate(props.data.created_at);
   return (
     <BlogDetailsPageStyle>
       <Head>
       {props.data.title && <title>{props.data.title}</title>}
-        {/* {props.data.meta_desc && <meta name="description" content={props.data.meta_desc} />}
-        {props.data.meta_keyword && <meta name="keywords" content={props.data.meta_keyword} />}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.head_tag }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.body_tag }} /> */}
+        {props.data.metadescription && <meta name="description" content={props.data.metadescription} />}
+        {props.data.metakeywords && <meta name="keywords" content={props.data.metakeywords} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.scripthead }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.scriptBody }} />
       </Head>
       <div className="blogbanner">
         <Images
-          src={`${process.env.NEXT_PUBLIC_Images_URL}${props.data.image}`}
+          src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${props.data.image}`}
           alt={"banner"}
           width={"100%"}
         ></Images>
@@ -56,13 +56,13 @@ const BlogDetailsPage = (props: Props) => {
                   _lineHeight={["40px", "30px"]}
                   className="py-3"
                 >
-                  Published on:{formattedDate} by {props.data.author}
+                  Published on:{formattedDate} by {props.data.auther_name}
                 </Typography>
                 <Typography
                   as="div"
                   _color="#000"
                   _fontSize={["30px", "16px"]}
-                  _fontWeight={[600, 600]}
+                  _fontWeight={[600, 200]}
                   _lineHeight={["40px", "24px"]}
                   className="py-3"
                 >
@@ -73,7 +73,7 @@ const BlogDetailsPage = (props: Props) => {
               </div>
             </div>
             <div className="col-md-4 mt-5">
-              <ProductRight productRight={"true"} />
+              <ProductRight productRight={""} blogCategory={props.data.category_id} blogTitle={props.data.title}/>
             </div>
           </div>
         </div>
@@ -88,6 +88,11 @@ export const BlogDetailsPageStyle = styled.section`
   .blogbanner {
     border-radius: 0px 0px 62px 62px;
     overflow: hidden;
+    img{
+      /* height:400px; */
+      overflow: hidden;
+      object-fit: cover;
+    }
   }
   .protMr {
     padding-right: 43px;
@@ -95,7 +100,7 @@ export const BlogDetailsPageStyle = styled.section`
   .blogText {
     padding: 30px 20px;
     background-color: #fff;
-    margin-top: -101px;
+    margin-top: -201px;
   }
   .protMr p , .protMr h1, .protMr h2,.protMr h3,.protMr h4, .protMr h5,.protMr h6{
     padding-bottom: 15px;

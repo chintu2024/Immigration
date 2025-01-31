@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ProductRightStyle = styled.div`
+margin-left: 30px;
   .keyWord {
     border: 1px solid #ececec;
     padding: 25px;
@@ -11,11 +12,15 @@ const ProductRightStyle = styled.div`
     li {
       background-color: #f5f8fa;
       color: #6e7682;
-      padding: 15px;
       display: inline-block;
-      margin: 5px 8px 7px 0px;
+      margin: 5px 0px;
+      /* border-bottom: 1px solid #d7d4d4; */
       border-radius: 25px;
       font-weight: 400;
+      a{
+        padding: 15px;
+        display:block;
+      }
     }
   }
   .calender {

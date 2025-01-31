@@ -13,6 +13,17 @@ export const BookConsultionData = {
   ulDataspan4: "5",
 };
 
+export const homeimages = [{
+  images: "images/ellipse310.png"
+},
+{
+  images: "images/ellipse311.png"
+},
+{
+  images: "images/ellipse312.png"
+}
+]
+
 export const numberHome = [
   {
     id: "1",

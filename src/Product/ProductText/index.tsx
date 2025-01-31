@@ -5,54 +5,54 @@ import Typography from "src/Common/Typography";
 
 interface Props {
   data?: any;
+  setProductID?:any; // SetProductID expects a function that takes an ID
 }
 
 const ProductsText = (props: Props) => {
+
   return (
     <ProductsTextStyle>
-      <Images
+      {/* <Images
         src={"images/bannerColor.svg"}
         alt={"images"}
         width={78}
         height={27}
-      ></Images>
-      {/* <Typography
-        as="div"
-        _color="#000"
-        _fontSize={["30px", "42px"]}
-        _fontWeight={[600, 600]}
-        _lineHeight={["40px", "54px"]}
-        className=""
-      >
-        </Typography> */}
-      <div
-        className="headingText"
-        dangerouslySetInnerHTML={{ __html: props.data.desc }}
-      />
+      /> */}
 
-      {props.data.productdata.map((item: any, index: any) => (
+      {props.data?.PageContent?.map((item: any, index: any) => (
         <div key={index}>
-           <div className="mt-5"
-        dangerouslySetInnerHTML={{ __html: item.productDesc }}/>
-        {item.productImage && 
-        <div className="text-center mt-5">
-          <Images
-            src={`${process.env.NEXT_PUBLIC_Images_URL}${item.productImage}`}
-            alt={"images"}
-            width={"100%"}
-            className="mt-4"
-          ></Images>
-          </div>
-          }
-        
-        {item.prodcuctLink && <div className="mt-5 video"
-        dangerouslySetInnerHTML={{ __html: item.prodcuctLink}}/>
-         }
-        </div>
-       
-        
-      ))}
+           {item.product_title && <Typography
+          as="h2"
+          _color="#000"
+          _fontSize={["20px", "24px"]}
+          _fontWeight={[600, 600]}
+          _lineHeight={["36px", "38px"]}
+          className="mb-2"
+        >
+          {item.product_title}
+        </Typography>}
+          <div
+            className="mt-2"
+            dangerouslySetInnerHTML={{ __html: item.description }}
+          />
+          {item.image && (
+            <div className="text-center productImages">
+              <Images
+                src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${item.image}`}
+                alt={"images"}
+                className="mt-4"
+              />
+            </div>
+          )}
 
+          {item.url && (
+            <div
+              className="mt-5 video"
+              dangerouslySetInnerHTML={{ __html: item.url }}
+            />
+          )}
+        </div>
+      ))}
     </ProductsTextStyle>
   );
 };

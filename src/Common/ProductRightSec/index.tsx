@@ -4,15 +4,18 @@ import Typography from "src/Common/Typography";
 import { Calendar } from "react-feather";
 import Images from "src/Common/Images";
 import RightBlog from "./RightBlog";
+import Link from "next/link";
 
 interface Props {
   productRight?: any;
+  blogCategory?: any;
+  blogTitle?: any;
 }
 
 const ProductRight = (props: Props) => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const blogData: any = blog
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,32 +36,50 @@ const ProductRight = (props: Props) => {
     };
 
     fetchData();
-  }, []);
+  }, []); 
   return (
     <ProductRightStyle>
       <div className="keyWord">
-        <Typography
-          as="h2"
-          _color="#000"
-          _fontSize={["20px", "24px"]}
-          _fontWeight={[600, 600]}
-          _lineHeight={["36px", "38px"]}
-          className="mb-2"
-        >
-          Work
-        </Typography>
+        {blogData?.data && (
+            <Typography
+              as="h2"
+              _color="#000"
+              _fontSize={["20px", "24px"]}
+              _fontWeight={[600, 600]}
+              _lineHeight={["36px", "38px"]}
+              className="mb-2"
+            >
+              Blogs category
+            </Typography>
+          )
+        }
+
         <ul className="keywordName">
-          <li>Canadian Citizenship</li>
-          <li>Canadian Study Permit</li>
-          <li>Express Entry</li>
-          <li>Immigrants</li>
+          {blogData?.data
+            .filter((item: any) => item.category_id === props.blogCategory ) // Replace `specificCategoryId` with the desired value && item.title != props.blogTitle
+            .slice(0, 5)
+            .map((item: any, index: any) => {
+              return (
+                <li key={index}>
+                  <Link
+                    href={`../blog/${item.slug
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              );
+            })}
         </ul>
-        <Images
-          src={"images/p4.jpg"}
-          alt={"images"}
-          width={"100%"}
-          className="mt-4"
-        ></Images>
+        {props.productRight && (
+          <Images
+            src={"images/p4.jpg"}
+            alt={"images"}
+            width={"100%"}
+            className="mt-4"
+          ></Images>
+        )}
         <Typography
           as="h2"
           _color="#000"
@@ -111,7 +132,7 @@ const ProductRight = (props: Props) => {
             _fontSize={["16px", "20px"]}
             _fontWeight={[600, 600]}
             _lineHeight={["20px", "20px"]}
-            className="mt-3 "
+            className="mt-3"
           >
             Don’t know what to do?
           </Typography>

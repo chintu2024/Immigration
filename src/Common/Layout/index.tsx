@@ -15,6 +15,8 @@ const LayOut = (props: Props) => {
 
 
   useEffect(() => {
+    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    
     const fetchData = async () => {
       // const cachedData = localStorage.getItem('categoryData');
       // const cachedTime = localStorage.getItem('categoryDataTime');
@@ -26,10 +28,10 @@ const LayOut = (props: Props) => {
       //     return;
       //   }
       // }
-
+  
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/category`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/categories`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");
@@ -42,9 +44,10 @@ const LayOut = (props: Props) => {
         console.error("Error fetching data:", error);
       }
     };
-
+  
     fetchData();
   }, []);
+  
 
   return (
     <Fragment>

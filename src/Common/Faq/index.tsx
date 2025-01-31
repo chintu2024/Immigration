@@ -34,7 +34,7 @@ const Faq = (props: Props) => {
         <Typography
           as="h5"
           _color="#2D3840"
-          _fontSize={["16px", "22px"]}
+          _fontSize={["16px", "18px"]}
           _fontWeight={[600, 600]}
           _lineHeight={["20px","30px"]}
           // _letterSpacing={["0.06em", "0.12em"]}
@@ -43,19 +43,10 @@ const Faq = (props: Props) => {
           {props.Title}
         </Typography>
         {props.according && (
-          <div className="productDetailsTable">
-            <Typography
-              as="p"
-              _color="#2D3840"
-              _fontSize={["14px", "20px"]}
-              _fontWeight={[400, 400]}
-              _lineHeight={["20px","28px"]}
-              // _letterSpacing={["0.06em", "0.12em"]}
-              className="faqP"
-            >
-              {props.des}
-            </Typography>
-          </div>
+          <div
+          className="productDetailsTable"
+          dangerouslySetInnerHTML={{ __html: props.des }}
+        />
         )}
       </div>
     </StyleFaq>
@@ -66,7 +57,7 @@ export default Faq;
 const StyleFaq = styled.div`
   .accordingTitle {
     cursor: pointer;
-    padding: 0px 0px 15px;
+    /* padding: 0px 0px 15px; */
     position: relative;
     &:before {
       content: "";
@@ -95,16 +86,20 @@ const StyleFaq = styled.div`
       }
     }
   }
+  .productDetailsTable{
+    padding-top: 15px;
+  }
   .according {
-    border-bottom: 1px solid #d2dae0;
+    border: 1px solid #d2dae0;
     /* border-radius: 16px; */
-    margin-bottom: 20px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 10px 20px;
     position: relative;
-    padding-left: 35px;
   }
   .according::before{
     position: absolute;
-    background: url(/images/chevrons-chevrons-right.png) no-repeat;
+    /* background: url(/images/chevrons-chevrons-right.png) no-repeat; */
     width: 30px;
     height: 20px;
     top: 0px;

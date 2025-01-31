@@ -15,10 +15,11 @@ export const formatDate = (timestamp: any) => {
 }
 
 const RightBlog = (props: Props) => {
+  // console.log("blog", props.blog)
   return (
     <>
-      {props.blog?.response.slice(0, 3).map((item: any, index: any) => {
-        const formattedDate = formatDate(item.added_on);
+      {props.blog?.data.slice(0, 3).map((item: any, index: any) => {
+        const formattedDate = formatDate(item.created_at);
         return(
           <div className="recentPost" key={index}>
           <Link

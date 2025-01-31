@@ -8,10 +8,11 @@ interface Props {
 }
 
 const TestimonalsIndex = (props: Props) => {
+  console.log("data", props.data)
   return (
     <TestimonalsStyle>
       <ContactBanner
-        title={"Our Client speak"}
+        title={"Transforming Visions into Reality"}
         dis={
           "Our mission is to empower every family to navigate the immigration system more confidently, rapidly, and affordably."
         }
@@ -32,13 +33,13 @@ const TestimonalsIndex = (props: Props) => {
                 You're in a good hand
               </Typography>
             </div>
-            {props.data.response.map((item: any, index: any) => (
+            {props.data.data.map((item: any, index: any) => (
               <div className="col-md-6 mb-4" key={index}>
                 <div className="testimonalsBox">
                   <div>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: item.youtube_video_link,
+                        __html: item.video_link,
                       }}
                     />
                     <Typography
@@ -49,11 +50,11 @@ const TestimonalsIndex = (props: Props) => {
                       _lineHeight={["36px", "44px"]}
                       className="my-4 testimonalTitle"
                     >
-                      {item.youtube_video_title}
+                      {item.title}
                     </Typography>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: item.youtube_video_desc,
+                        __html: item.content,
                       }}
                     />
                   </div>
@@ -68,9 +69,12 @@ const TestimonalsIndex = (props: Props) => {
 };
 export default TestimonalsIndex;
 export const TestimonalsStyle = styled.section`
+.bannerText{
+  font-size: 50px;
+}
   .testimonalsBox {
-    margin-top: 40px;
-    display: flex;
+    margin: 20px 0px;
+    /* display: flex; */
     height: calc(100% - 60px);
     position: relative;
     background-color: #f9f9f9;

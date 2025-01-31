@@ -5,6 +5,11 @@ const LatestUpdateStyle = styled.section`
   padding: 50px 0px;
   position: relative;
   z-index: 1;
+  .ImagesSec{
+    img{
+      object-fit: cover;
+    }
+  }
 `;
 
 export default LatestUpdateStyle;

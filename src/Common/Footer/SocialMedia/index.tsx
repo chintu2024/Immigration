@@ -9,8 +9,8 @@ const SocialMedia = (props: Props) => {
   return (
     <div className="col-md-6">
       <div className="d-flex pt-4 socialMedia">
-        {props.socialink.response.insta && (
-          <a href={props.socialink.response.insta} target="black">
+        {props.socialink.data.instagram && (
+          <a href={props.socialink.data.instagram} target="black">
             <Images
               src={"/images/instagram.svg"}
               alt={"instafram"}
@@ -20,8 +20,8 @@ const SocialMedia = (props: Props) => {
           </a>
         )}
 
-        {props.socialink.response.facebook && (
-          <a href={props.socialink.response.facebook} target="black">
+        {props.socialink.data.facebook && (
+          <a href={props.socialink.data.facebook} target="black">
             <Images
               src={"/images/facebook.svg"}
               alt={"facebook"}
@@ -30,8 +30,8 @@ const SocialMedia = (props: Props) => {
             ></Images>
           </a>
         )}
-        {props.socialink.response.linkedin &&
-        <a href={props.socialink.response.linkedin} target="black">
+        {props.socialink.data.linkdin &&
+        <a href={props.socialink.data.linkdin} target="black">
           <Images
             src={"/images/linkdin.svg"}
             alt={"linkdin"}
@@ -40,8 +40,8 @@ const SocialMedia = (props: Props) => {
           ></Images>
         </a>
         }
-        {props.socialink.response.youtube &&
-        <a href={props.socialink.response.youtube} target="black">
+        {props.socialink.data.youtube &&
+        <a href={props.socialink.data.youtube} target="black">
           <Images
             src={"/images/youtube.svg"}
             alt={"youtube"}

@@ -6,6 +6,7 @@ import Images from "../Images";
 import styled from "styled-components";
 import Submenu from "./submenu";
 import Link from "next/link";
+import SubMenu2 from "./SubMenu2";
 
 interface Props {
   category?: any;
@@ -19,32 +20,12 @@ const Menu = (props: Props) => {
 
   const [menutoggale, Setmenutoggale] = useState(false);
   const [link, Setlink] = useState<string | null>(null); // Initialize link state properly
-  const reversedCategories = props.category?.response.slice().reverse() || [];
+  const reversedCategories = props.category?.data.slice() || [];
   const radioButtonRef = useRef<HTMLInputElement>(null);
-  const [data, setData] = useState<any | null>(null); // Initialize data state properly
+  const urlSl = "/"
+  // const [data, setData] = useState<any | null>(null); // Initialize data state properly
   const categoryId: any = link;
-  // console.log("data", data)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!categoryId) return; // Prevent fetching if categoryId is not set
-
-      try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/product_by_category/${categoryId}`
-        );
-        if (!res.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const fetchedData = await res.json();
-        setData(fetchedData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, [categoryId]); // Add categoryId to dependency array
+// console.log("reversedCategories",reversedCategories)
 
   return (
     <>
@@ -116,23 +97,26 @@ const Menu = (props: Props) => {
               <div className={menutoggale === true ? "nav-links menuslideOff" : "nav-links"}>
                 <ul className="nav-ul">
                   <label htmlFor="close-btn" className="btn close-btn">
-                    dd
+                  <img src="images/menuclose.png" alt="" />
                   </label>
-                  {reversedCategories.map((item: any, index: any) => (
+                  {reversedCategories.map((item: any, index: any) =>{
+                    return (
                     <li key={index} className={`${showMega[index]}`} onMouseOver={() => Setmenutoggale(false)}>
-                      {item.navi === "true" &&
+                      {item.navi != false &&
                         <>
-                          <Link href={`../${item.category.toLowerCase().replace(/\s+/g, "-")}`} onClick={() => Setlink(item._id)} className="desktop-item">
-                            {item.category}
+                          {/* <Link href={`../${item.slug.toLowerCase().replace(/\s+/g, "-")}`} onClick={() => Setlink(item.id)} className="desktop-item"> */}
+                          <Link href={`../${item.slug}`} onClick={() => Setlink(item.id)} className="desktop-item">
+                            {item.name}
                           </Link>
                           <input type="radio" ref={radioButtonRef} name="menubtn" id={`${showMega[index]}`} />
                           <label htmlFor={`${showMega[index]}`} className="mobile-item">
-                            {item.category}
+                            {item.name}
                           </label>
-                          <Submenu id={item._id} index={index} setmenutoggale={Setmenutoggale} menutoggale={menutoggale} />
+                          {/* <Submenu id={item.id} index={index} setmenutoggale={Setmenutoggale} menutoggale={menutoggale} /> */}
+                          <SubMenu2 id={item.id} index={index} setmenutoggale={Setmenutoggale} menutoggale={menutoggale} />
                         </>}
                     </li>
-                  ))}
+                  )})}
                   <li>
                     <ImButton
                       as={"button"}
@@ -148,7 +132,7 @@ const Menu = (props: Props) => {
                 </ul>
               </div>
               <label htmlFor="menu-btn" className="btn menu-btn" onClick={() => Setmenutoggale(false)}>
-                dgjfgdjg
+                <img src="images/menuopen.png" alt="" />
               </label>
             </div>
           </div>

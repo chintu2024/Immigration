@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BigNewsStyle = styled.div`
   .ImagesSec {
     img {
-      border-radius: 0px 0px 60px 60px;
+      border-radius: 32px 32px 32px 32px;
     }
   }
   .newsTag {

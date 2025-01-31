@@ -6,6 +6,7 @@ import ProductRight from "../Common/ProductRightSec2";
 import Faq from "src/Common/Faq";
 import Typography from "src/Common/Typography";
 import Head from "next/head";
+import PageCard from "./ProductText/PageCard";
 
 interface Props {
   data?:any;
@@ -13,51 +14,72 @@ interface Props {
 
 const ProductDetails = (props: Props) => {
   const [according, setAccording] = useState(true);
-  // console.log(props.data)
+  const [productID, setProductID] = useState();
+  // console.log("data", props.data)
+  useEffect(() => {
+    if (props.data) {
+      // Set the product ID to the first item's ID on component load
+      setProductID(props.data.name);
+    }
+  }, [props.data, setProductID]); // Dependency array
   return (
     <ProductStyle>
       <Head>
-      {props.data.meta_title && <title>{props.data.meta_title}</title>}
+      {props.data.metaTag && <title>{props.data.metaTag}</title>}
         {props.data.meta_desc && <meta name="description" content={props.data.meta_desc} />}
-        {props.data.meta_keyword && <meta name="keywords" content={props.data.meta_keyword} />}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.head_tag }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.body_tag }} />
+        {props.data.meta_tag_key && <meta name="keywords" content={props.data.meta_tag_key} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.dynamic_head }} />
       </Head>
         <div className="container mt-4">
           <div className="row">
-            <div className="col-md-8 protMr">
+            <div className="col-md-12  mx-auto">
+              <PageCard data={props.data}/>
+            </div>
+            <div className={(props.data.customAdds.length > 0 || props.data.topices === true || props.data.navigation === true || props.data.inquiry === true) ? "col-md-8 protMr" : "col-md-12 protMr"}>
               <ProductsText data={props.data}/>
             </div>
-            <div className="col-md-4">
-              <ProductRight productRight={true} data={props.data}/>
-            </div>
-            <div className="col-md-8 mt-5">
-            <Typography
+            {(props.data.customAdds.length > 0 || props.data.topices === true || props.data.navigation === true || props.data.inquiry === true) && (
+                <div className="col-md-4">
+                  <ProductRight productRight={true} data={props.data} productName={productID} />
+                </div>
+              )}
+          </div>
+        </div>
+        {props.data.faq_title && <div className="faqBack">
+        <div className="container py-5">
+          <div className="row">
+              <div className="col-md-10 offset-md-2 mx-auto">
+              <Typography
               as="p"
               _color="#000"
               _fontSize={["12px", "24px"]}
               _fontWeight={[600, 600]}
               _lineHeight={["20px", "25px"]}
-              className="mb-4"
+              className="text-center mb-4"
             >
-             {props.data.faqheading}
+             {props.data.faq_title}
             </Typography>
-              {props.data.faqdata.map((item: any, index: any) => (
+              {props.data.faqs.map((item: any, index: any) => (
                 <div key={index}>
                   <Faq
                     according={according}
-                    Title={item.faqlitle}
-                    des={item.faqdesc}
+                    Title={item.name}
+                    des={item.description}
                   />
                 </div>
               ))}
-            </div>
-            <div className="col-md-12">
+              </div>
+          </div>
+        </div>
+        </div>}
+        {props.data.footer_desc && <div className="container">
+          <div className="row">
+          <div className="col-md-12">
               <Inspiration footerdata={props.data.footer_desc}/>
             </div>
           </div>
-        </div>
-      
+        </div>}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: props.data.dynamic_body }} />
     </ProductStyle>
   );
 };

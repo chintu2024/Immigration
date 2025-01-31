@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 const BannerStyle = styled.div`
   .bannerImages {
-    object-fit: cover;
     position: absolute;
     top: 0px;
     z-index: -9;
     border-radius: 0px 0px 62px 62px;
+    height: 100%;
+    max-height: 620px;
   }
   .slick-list {
     border-radius: 0px 0px 62px 62px;
@@ -44,8 +45,19 @@ const BannerStyle = styled.div`
   }
   .slick-dots {
     z-index: 10000;
-    bottom: 36px;
+    bottom: 100px;
     left: 24px;
   }
+  .slick-dots li button:before{
+    background-color: #cac8c7 !important;
+  }
+  .slick-dots .slick-active button:before{
+    background-color: #f44e1c !important;
+  }
+  @media only screen and (max-width: 600px) {
+    .bannerImages {
+      object-fit: cover;
+  }
+}
 `;
 export default BannerStyle;

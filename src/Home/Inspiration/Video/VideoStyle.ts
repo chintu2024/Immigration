@@ -15,11 +15,18 @@ const VideoStyle = styled.div`
   }
   iframe{
     width: 100% !important;
-    height: 245px !important;
+    height: 300px !important;
     border-radius: 12px;
   }
   .videoTitle{
     -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+  }
+  .text_rap{
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     white-space: normal;

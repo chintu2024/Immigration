@@ -14,13 +14,13 @@ interface Props {
 const Home = (props: Props) => {
   return (
     <StyleHome>
-      <Banner banner={props.data.response.homebanner}/>
+      <Banner banner={props.data.data.Banners}/>
       <ImmigrationIndex data={props.data} />
-      <MainAbout homepagecard={props.data.response.homepagecard}/>
+      <MainAbout />
       <CheckEligibilityIndex />
       <ProcessIndex />
       <LatestUpdateIndex />
-      <Inspiration footerdata={props.data.response.footer} hrcall={true}/>
+      <Inspiration footerdata={props.data.data.footer_desc} hrcall={false} clientneed={true}/>
     </StyleHome>
   );
 };

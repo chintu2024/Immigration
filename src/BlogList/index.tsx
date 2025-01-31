@@ -45,21 +45,21 @@ const BlogList = (props: Props) => {
               Social media best practices for brands and agencies
             </Typography>
           </div>
-          <div className="col-md-8 protMr">
+          <div className="col-md-12 protMr">
             <div className="row">
-              {props.blog?.response.map((item: any, index: any) => {
-                const formattedDate = formatDate(item.added_on);
+              {props.blog.data.map((item: any, index: any) => {
+                const formattedDate = formatDate(item.created_at);
                 return (
-                  <div className="col-md-6" key={index}>
+                  <div className="col-md-4" key={index}>
                     <div className="blogList">
                       <Link
                         href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
                       >
                         <Images
-                          src={`${process.env.NEXT_PUBLIC_Images_URL}${item.image}`}
+                          src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${item.image}`}
                           alt={"images"}
                           width={"100%"}
-                          height={227}
+                          height={300}
                         ></Images>
                       </Link>
                       <Link
@@ -92,9 +92,9 @@ const BlogList = (props: Props) => {
               })}
             </div>
           </div>
-          <div className="col-md-4">
-            <ProductRight productRight={true} />
-          </div>
+          {/* <div className="col-md-4">
+            <ProductRight productRight={false} />
+          </div> */}
         </div>
       </div>
     </BlogListStyle>
@@ -108,6 +108,12 @@ export const BlogListStyle = styled.section`
   margin-bottom: 50px;
   .blogList {
     margin-bottom: 20px;
+    img{
+      object-fit: cover;
+    }
+  }
+  .blogList img{
+    object-fit: cover;
   }
   .protMr {
     padding-right: 43px;

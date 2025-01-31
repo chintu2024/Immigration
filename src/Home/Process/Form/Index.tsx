@@ -180,7 +180,9 @@ const FormIndex = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="box-col-md-12"></div>
+          <div className="box-col-md-12">
+            <input type="submit" className="submitBtn"/>
+          </div>
         </div>
       </div>
     </FromStyle>

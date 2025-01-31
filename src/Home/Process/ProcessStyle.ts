@@ -10,7 +10,7 @@ const ProcessStyle = styled.section`
     img {
       position: absolute;
       bottom: -7px;
-      right: 223px;
+      right: 50%;
     }
   }
   .processDiv {
@@ -26,6 +26,9 @@ const ProcessStyle = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
+      :hover{
+        background-color: #fe0002;
+      }
     }
     .processtext {
       -webkit-line-clamp: 2;

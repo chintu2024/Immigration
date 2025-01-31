@@ -29,8 +29,8 @@ const NewsList = (props: Props) => {
       >
         Elaar Guidance
       </Typography>
-      {props.blog?.response.slice(-2).map((item: any, index: any) => {
-        const formattedDate = formatDate(item.added_on);
+      {props.blog?.data.slice(-3).map((item: any, index: any) => {
+        const formattedDate = formatDate(item.created_at);
         return (
           <div className="newsList" key={index}>
             <div>
@@ -63,10 +63,10 @@ const NewsList = (props: Props) => {
               href={`blog/${item.slug.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <Images
-                src={`${process.env.NEXT_PUBLIC_Images_URL}${item.image}`}
+                src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${item.image}`}
                 alt={"images"}
-                width={110}
-                height={114}
+                width={120}
+                height={120}
               />
             </Link>
           </div>

@@ -8,8 +8,9 @@ const NewsListStyle = styled.div`
     padding-bottom: 20px;
     gap: 64px;
     img {
-      border-radius: 0px 0px 60px 45px;
-      padding-right: 23px;
+      border-radius: 16px 16px 16px 16px;
+      /* padding-right: 23px; */
+      object-fit: cover;
     }
   }
 `;

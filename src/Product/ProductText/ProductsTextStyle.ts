@@ -36,6 +36,9 @@ ul{
         -ms-letter-spacing: 0px;
         letter-spacing: 0px;
 }
+.productImages img{
+    max-width: 900px;
+}
 `;
 
 export default ProductsTextStyle;

@@ -48,6 +48,17 @@ const FromStyle = styled.div`
       outline: none;
     }
   }
+  .submitBtn{
+    margin-top: 20px;
+    border: none;
+    max-width: 200px;
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #fe0002;
+  }
 `;
 
 export default FromStyle;

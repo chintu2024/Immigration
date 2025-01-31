@@ -8,14 +8,15 @@ interface Props {
 }
 
 const VideoIndex = (props: Props) => {
+  console.log("clientVideo",props.clientVideo)
   return (
     <>
     <div className="row">
-    {props.clientVideo?.response.slice(0,3).map((item:any, index:any) => (
+    {props.clientVideo?.data.slice(0,3).map((item:any, index:any) => (
       <div className="col-md-4" key={index}>
       <VideoStyle>
         <div className="videoSec">
-        <div dangerouslySetInnerHTML={{ __html: item.youtube_video_link }} />
+        <div dangerouslySetInnerHTML={{ __html: item.video_link }} />
         <Typography
           as="p"
           _color="#000"
@@ -24,18 +25,18 @@ const VideoIndex = (props: Props) => {
           _lineHeight={["20px", "35px"]}
           className="mt-2 videoTitle"
         >
-          {item.youtube_video_title}
+          {item.title}
         </Typography>
-        {/* <Typography
+        <Typography
           as="p"
           _color="#000"
           _fontSize={["14px", "16px"]}
           _fontWeight={[400, 400]}
-          _lineHeight={["20px", "13px"]}
-          className="mt-0"
+          _lineHeight={["20px", "24px"]}
+          className="text_rap mt-0"
         >
-          Canada PR Visa
-        </Typography> */}
+          {item.tag_desc}
+        </Typography>
       </div>
       </VideoStyle>
       </div>

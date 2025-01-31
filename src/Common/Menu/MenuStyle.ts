@@ -2,6 +2,9 @@ import styled from "styled-components";
 import theme from "styles/themeColor";
 
 const MeneStyle = styled.section`
+*{
+  box-sizing: border-box;
+}
   .menubarColor {
     background-color: ${theme.colors.menubar};
     a {
@@ -47,12 +50,14 @@ const MeneStyle = styled.section`
     max-width: 303px;
   }
   .menuBar .logo img {
-    height: 69px;
+    height: 60px;
     margin-bottom: -18px;
+    padding-top: 8px;
   }
   .menuBar .wrapper {
-    position: relative;
-    max-width: 100%;
+    /* position: relative; */
+    max-width: 1340px;
+    width: 100%;
     padding: 0px 30px;
     height: 70px;
     line-height: 45px;
@@ -85,6 +90,7 @@ const MeneStyle = styled.section`
     padding: 0px 15px;
     display: block;
     /* border-radius: 5px; */
+    display: flex;
     transition: all 0.3s ease;
   }
   .nav-links .nav-ul > li{
@@ -92,7 +98,7 @@ const MeneStyle = styled.section`
    line-height: 68px;
   }
   .nav-links .nav-ul >li:hover {
-    background-color: #f44e1c;
+    background-color: ${theme.colors.back1};
   }
   .nav-links .showMega1:hover {
     background-color: ${theme.colors.back1} !important;
@@ -109,7 +115,19 @@ const MeneStyle = styled.section`
   .nav-links .showMega5:hover {
     background-color: ${theme.colors.back5} !important;
   }
-  .nav-links .showMega5:hover a{
+  .nav-links .showMega6:hover {
+    background-color: ${theme.colors.back6} !important;
+  }
+  .nav-links .showMega7:hover {
+    background-color: ${theme.colors.back7} !important;
+  }
+  .nav-links .showMega8:hover {
+    background-color: ${theme.colors.back8} !important;
+  }
+  .showMega2 .mega-links li::before,.showMega1 .mega-links li::before {
+    filter: invert(1);
+}
+.nav-links .showMega1:hover a, .nav-links .showMega2:hover a{
     color: #fff;
   }
   .nav-links .mobile-item {
@@ -157,7 +175,7 @@ const MeneStyle = styled.section`
 
   .mega-box .content {
     background: #f44e1c;
-    padding: 30px 40px;
+    padding: 60px 20px;
     display: flex;
     flex-wrap: wrap;
     /* width: 100%; */
@@ -166,6 +184,7 @@ const MeneStyle = styled.section`
     /* gap: 12px; */
     /* width: calc(100% - 40px); */
     /* margin-top: 13px; */
+    border-radius: 0px 0px 60px 60px
   }
   .nav-links >li {
     padding: 13px 0px;
@@ -185,11 +204,19 @@ const MeneStyle = styled.section`
   .mega-box .content.back5{
     background-color: ${theme.colors.back5};
   }
-  .mega-box .content.back5 a{
-    background-color: ${theme.colors.back5};
+  .mega-box .content.back6{
+    background-color: ${theme.colors.back6};
+  }
+  .mega-box .content.back7{
+    background-color: ${theme.colors.back7};
+  }
+  .mega-box .content.back8{
+    background-color: ${theme.colors.back8};
+  }
+  .mega-box .content.back2 a{
     color: #fff;
   }
-  .mega-box .content.back5 .col-md-3 header {
+  .mega-box .content.back2 .col-md-3 header ,.mega-box .content.back1 .col-md-3 header {
     color: #fff;
 }
   .mega-box .content .col-md-3 {
@@ -224,13 +251,14 @@ const MeneStyle = styled.section`
     left: 0px;
     top: 0px;
   }
-  .content.back5 .col-md-3:nth-child(2) header::before,.content.back5 .col-md-3:nth-child(2) header::after,.content.back5 .col-md-3:nth-child(3) header::before,.content.back5 .col-md-3:nth-child(3) header::after, .back5 .menuLink li::after ,.back5 .menuLink li img {
+  .content.back2 .col-md-3:nth-child(2) header::before,.content.back2 .col-md-3:nth-child(2) header::after,.content.back2 .col-md-3:nth-child(3) header::before,.content.back2 .col-md-3:nth-child(3) header::after,.content.back2 .col-md-3:nth-child(4) header::before,.content.back2 .col-md-3:nth-child(4) header::after, .back2 .menuLink li::after ,.back2 .menuLink li img,
+  .content.back1 .col-md-3:nth-child(2) header::before,.content.back1 .col-md-3:nth-child(2) header::after,.content.back1 .col-md-3:nth-child(3) header::before,.content.back1 .col-md-3:nth-child(3) header::after,.content.back1 .col-md-3:nth-child(4) header::before,.content.back1 .col-md-3:nth-child(4) header::after, .back1 .menuLink li::after ,.back1 .menuLink li img {
     filter: invert(1);
   }
-  .back5 .menuLink li ,.content.back5 .col-md-3  header{
+  .back2 .menuLink li ,.content.back2 .col-md-3  header,.back1 .menuLink li ,.content.back1 .col-md-3  header{
     border-bottom: 1px solid #fff;
   }
-  .content.back5 h2{color:#fff;}
+  .content.back2 h2,.content.back1 h2{color:#fff;}
   /* .content .col-md-3:nth-child(3) header::before{
     content: "";
     background: url(/images/icon/files-file-text.svg) no-repeat;
@@ -301,7 +329,7 @@ const MeneStyle = styled.section`
     border-bottom: 1px solid #000;
     position: relative;
     margin-left: 0px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   .menuLink li::after{
     content: "";
@@ -310,7 +338,7 @@ const MeneStyle = styled.section`
     width: 24px;
     height: 24px;
     right: 0px;
-    top: 17px;
+    top: 28px;
   }
   .menuLink a{
     display: flex;
@@ -326,6 +354,9 @@ const MeneStyle = styled.section`
     .wrapper .btn {
       display: block;
     }
+    .menuBar .wrapper{
+      width: auto;
+    }
     .menuHide {
     opacity: 1 !important;
     visibility: visible !important;
@@ -336,8 +367,8 @@ const MeneStyle = styled.section`
     .nav-links .nav-ul{
     display: block;
     padding-left: 0px;
-    overflow: scroll;
-    height: calc(100vh - 390px);
+    /* overflow: scroll; */
+    height: calc(95vh);
   }
   .nav-links .nav-ul::-webkit-scrollbar{
     background-color: #fff;
@@ -353,7 +384,7 @@ const MeneStyle = styled.section`
       max-width: 350px;
       top: 0;
       left: -100%;
-      background: #242526;
+      background: #fff;
       display: block;
       padding: 50px 10px;
       line-height: 50px;
@@ -420,7 +451,7 @@ const MeneStyle = styled.section`
     }
     .nav-links .mobile-item {
       display: block;
-        color: #f2f2f2;
+        color: #000;
         font-size: 16px;
         font-weight: 500;
         padding-left: 4px;
@@ -450,7 +481,7 @@ const MeneStyle = styled.section`
     .mega-box .content {
       box-shadow: none;
       flex-direction: column;
-      padding: 6px 11px 0 0px;
+      padding: 6px 0px 0 0px;
       margin-top: 0px;
     }
     .mega-box .content .col-md-3 {

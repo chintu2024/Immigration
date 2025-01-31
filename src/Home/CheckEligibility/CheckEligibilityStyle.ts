@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CheckEligibilityStyle = styled.section`
   background-color: #c6d6f7;
-  margin-top: 40px;
+  margin-top: 350px;
   padding: 80px 0px;
   position: relative;
   z-index: 1;

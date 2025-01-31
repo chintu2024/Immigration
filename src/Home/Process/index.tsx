@@ -23,12 +23,6 @@ const ProcessIndex = (props: Props) => {
             >
               We make your journey stress free by using our experience and
               extensive knowledge.
-              <Images
-                src={"images/logotick2.svg"}
-                alt={"logo tick"}
-                width={114}
-                height={18}
-              ></Images>
             </Typography>
             <div className="row">
               {processData.map((item, index) => (

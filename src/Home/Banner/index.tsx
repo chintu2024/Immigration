@@ -7,11 +7,13 @@ import Slider from "react-slick";
 import { SlickStyles } from "styles/slickStyle";
 import Link from "next/link";
 
+
 interface Props {
   banner?:any;
 }
 
 const Banner = (props: Props) => {
+  // console.log("banner", props.banner)
   var settings = {
     dots: true,
     infinite: true,
@@ -29,7 +31,7 @@ const Banner = (props: Props) => {
         {props.banner.map((item:any, index:any) => (
           <div className="bannerBg" key={index}>
             <Images
-              src={`${process.env.NEXT_PUBLIC_Images_URL}${item.homeBannerImage}`}
+              src={`${process.env.NEXT_PUBLIC_Images_URL}/public/images/${item.destop}`}
               alt={"banner"}
               width={"100%"}
               height={"auto"}
@@ -52,14 +54,14 @@ const Banner = (props: Props) => {
                     _lineHeight={["20px", "56px"]}
                     className="mt-2 title"
                   >
-                    {item.homeBannertext}
-                    <Images
+                    {item.title}
+                    {/* <Images
                       src={"images/logotick.svg"}
                       alt={"images"}
                       width={114}
                       height={18}
                       className="logoImages"
-                    ></Images>
+                    ></Images> */}
                   </Typography>
                   <Typography
                     as="p"
@@ -69,16 +71,16 @@ const Banner = (props: Props) => {
                     _lineHeight={["20px", "28px"]}
                     className="mt-4"
                   >
-                    {item.homeBannerDescription}
+                    {item.Description}
                   </Typography>
-                  <Link href={item.homeBannerUrl}>
+                  <a href={item.url}>
                   <div className="BookingBtn">
                     <p>
-                      Book a Consultion{" "}
+                      {item.name}{" "}
                       <img src="images/arrows-arrow-up-right.svg" width={30} />
                       </p>
                   </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
