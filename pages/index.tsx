@@ -12,14 +12,14 @@ const Index = (props: Props) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/page/home`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/pages/1`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
         const fetchedData = await res.json();
-
         setData(fetchedData);
+        // console.log("data", fetchedData)
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {

@@ -1,23 +1,24 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Error404 from "src/Common/404";
-import Layout from "src/Common/Layout";
+import LayOut from "src/Common/Layout";
 import BlogDetailsPageSkeleton from "src/Common/SkeletonScreen/blogDetailsPageSkeleton";
-import ProductDetails from "src/Product";
+import NewscartPages from "src/News/NewscartPages";
 
 interface Props {}
 
-const ProductDetailsIndex = (props: Props) => {
+const NewsDetails = (props: Props) => {
   const router = useRouter();
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null); // Change to string for specific error messages
+  const [error, setError] = useState<string | null>(null);
 
-  const slug = router.query.slug as string; // Get slug directly from the router query
-  // console.log("slug",slug)
-
+  // Extract slug from router asPath
+  const slugset = router.query.slug as string;
+  const slug = slugset ? slugset.replace(/\s+/g, " ").split("-").join(" ") : "";
+// console.log("slug", slug)
+// console.log("data", data)
   useEffect(() => {
-    
     const fetchData = async () => {
       setLoading(true);
       setError(null); // Reset error state on new request
@@ -25,20 +26,22 @@ const ProductDetailsIndex = (props: Props) => {
 
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/product/${slug}`
+          `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/news-cat-wise/${slug}`
         );
         if (!res.ok) {
           const errorMessage = await res.text(); // Get detailed error message
           throw new Error(`Failed to fetch: ${errorMessage}`);
         }
-        const item = await res.json();
-        if (!item.data) {
-          throw new Error("Product not found."); // Handle case where product is not found
+
+        const fetchedData = await res.json();
+        if (!fetchedData) {
+          throw new Error("Blog post not found.");
         }
-        setData(item);
+
+        setData(fetchedData);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setError("error"); // Set error message
+        setError("error"); // Store the error message
       } finally {
         setLoading(false);
       }
@@ -49,27 +52,25 @@ const ProductDetailsIndex = (props: Props) => {
 
   if (loading) {
     return (
-      <Layout>
+      <LayOut>
         <BlogDetailsPageSkeleton />
-      </Layout>
+      </LayOut>
     );
   }
 
   if (error) {
     return (
-      <Layout>
-        <Error404  /> {/* Pass the error message to Error404 */}
-      </Layout>
+      <LayOut>
+        <Error404 /> {/* You can customize the error message as needed */}
+      </LayOut>
     );
   }
 
-  const productdata = data?.data;
-
   return (
-    <Layout>
-      <ProductDetails data={productdata} />
-    </Layout>
+    <LayOut>
+      <NewscartPages data={data} slug={slug}/>
+    </LayOut>
   );
 };
 
-export default ProductDetailsIndex;
+export default NewsDetails;

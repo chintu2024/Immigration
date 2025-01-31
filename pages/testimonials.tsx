@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Error404 from 'src/Common/404';
 import LayOut from 'src/Common/Layout';
 import HomePageSkeleton from 'src/Common/SkeletonScreen/homePageSkeleton';
 import TestimonalsIndex from 'src/Testimonials';
@@ -12,7 +13,7 @@ const Testimonials = (props: Props) => {
       const fetchData = async () => {
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/client`
+            `${process.env.NEXT_PUBLIC_WEBSITE_URL}/api/clients`
           );
           if (!res.ok) {
             throw new Error("Failed to fetch data");
@@ -36,7 +37,7 @@ const Testimonials = (props: Props) => {
       ) : data ? (
         <TestimonalsIndex data={data}/>
       ) : (
-        <p>No data available</p>
+        <Error404/>
       )}
    </LayOut>
   )
